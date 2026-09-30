@@ -1,0 +1,117 @@
+{
+  "schema_version": "2",
+  "job_id": "food-salmon-raw-fresh-r0002",
+  "canonical_food_id": "salmon-raw-fresh",
+  "research_version": 2,
+  "request_hash": "e2bf59d2627e7ca5a125691d07ea967efe369304974ac9da0cc23061e02bb971",
+  "nutrient_definition_version": "common-food-v2",
+  "status": "completed",
+  "failure_code": "none",
+  "researched_on": "2026-09-30",
+  "review_needed": true,
+  "nutrients": {
+    "carbs": {
+      "value": 0,
+      "unit": "g_per_100g",
+      "definition": "available_carbohydrate",
+      "method": "openai_research_estimate",
+      "confidence": 0.9,
+      "evidence_kind": "estimated",
+      "source_label": "Carbohydrate",
+      "source_definition": "Available carbohydrate calculated as sugar plus starch (MI0181); constituent values are logical zeros, not analytical measurements.",
+      "source_scope": "food_value",
+      "source_notes": "Official raw farmed Atlantic salmon value is 0 g/100g, calculated from imputed zero sugar and starch. Dutch raw salmon entry also reports 0.0 g. Supported estimate, not a measured absence; generic salmon species/farming is unspecified.",
+      "references": [
+        {
+          "title": "Norwegian Food Composition Table: Salmon, farmed, raw",
+          "url": "https://www.matvaretabellen.no/en/salmon-farmed-raw/",
+          "accessed_on": "2026-09-30",
+          "locator": "Food ID 04.220; Carbohydrate 0 g/100g; MI0181 and source 50"
+        },
+        {
+          "title": "Voedingswaardetabel.nl: Zalm, onbereid",
+          "url": "https://www.voedingswaardetabel.nl/voedingswaarde/voedingsmiddel/?id=912",
+          "accessed_on": "2026-09-30",
+          "locator": "Per 100 gram; Koolhydraten 0,0 g"
+        }
+      ],
+      "range": null,
+      "review_needed": true
+    },
+    "vitamin_d": {
+      "value": 7,
+      "unit": "ug_per_100g",
+      "definition": "vitamin_d",
+      "method": "openai_research_estimate",
+      "confidence": 0.7,
+      "evidence_kind": "researched",
+      "source_label": "Vitamin D",
+      "source_definition": "Vitamin D as reported by Matvaretabellen; analytical mean, source 321f (Institute of Marine Research seafood data, 2022). Chemical subform detail is not given on the food page.",
+      "source_scope": "food_value",
+      "source_notes": "Raw farmed Atlantic salmon: 7 ug/100g. V2 accepts the reported ordinary Vitamin D value. Dutch raw salmon cross-check is 9 ug/100g; retain primary value. Species, feed and farming affect transfer to unspecified generic salmon.",
+      "references": [
+        {
+          "title": "Norwegian Food Composition Table: Salmon, farmed, raw",
+          "url": "https://www.matvaretabellen.no/en/salmon-farmed-raw/",
+          "accessed_on": "2026-09-30",
+          "locator": "Food ID 04.220; Vitamins, Vitamin D 7 ug/100g; source 321f"
+        },
+        {
+          "title": "Voedingswaardetabel.nl: Zalm, onbereid",
+          "url": "https://www.voedingswaardetabel.nl/voedingswaarde/voedingsmiddel/?id=912",
+          "accessed_on": "2026-09-30",
+          "locator": "Per 100 gram; Vitamine D (Calcifine) 9,0 ug"
+        }
+      ],
+      "range": null,
+      "review_needed": true
+    },
+    "omega_3": {
+      "value": 2.6,
+      "unit": "g_per_100g",
+      "definition": "total_omega_3",
+      "method": "openai_research_estimate",
+      "confidence": 0.75,
+      "evidence_kind": "researched",
+      "source_label": "Omega-3",
+      "source_definition": "Total cis n-3 polyunsaturated fatty acids, calculated as the sum of cis n-3 polyunsaturated fatty acids; source 321f.",
+      "source_scope": "food_value",
+      "source_notes": "Official reported total is 2.6 g/100g for raw farmed Atlantic salmon. Use the published total, not a new EPA+DHA sum. Generic salmon origin and farming are unspecified, so review applicability.",
+      "references": [
+        {
+          "title": "Norwegian Food Composition Table: Salmon, farmed, raw",
+          "url": "https://www.matvaretabellen.no/en/salmon-farmed-raw/",
+          "accessed_on": "2026-09-30",
+          "locator": "Food ID 04.220; Fatty acids, Omega-3 2.6 g/100g; Omega-3 method metadata"
+        }
+      ],
+      "range": null,
+      "review_needed": true
+    },
+    "vitamin_k": {
+      "value": 17,
+      "unit": "ug_per_100g",
+      "definition": "vitamin_k",
+      "method": "openai_research_estimate",
+      "confidence": 0.5,
+      "evidence_kind": "estimated",
+      "source_label": "Vitamin K (ug PKeq/100 g)",
+      "source_definition": "Study-defined total of phylloquinone and menaquinones MK-4 to MK-10, expressed as phylloquinone equivalents (PKeq), adjusted for molecular weight; not unweighted vitamer mass.",
+      "source_scope": "food_value",
+      "source_notes": "Approximate 17 ug PKeq/100g read visually from the complete stacked Salmon, raw bar in Fig. 6 of Jensen et al. (2025). Range 16-18 reflects graph-reading uncertainty, not population variation. Raw farmed Salmo salar; exact numeric supplement unavailable. V2 common food value; explicit review needed for PKeq basis and generic-food transfer.",
+      "references": [
+        {
+          "title": "Jensen et al. (2025): Vitamin K - content in food and dietary intake among the Danes",
+          "url": "https://backend.orbit.dtu.dk/ws/portalfiles/portal/382428057/1-s2.0-S0308814624033016-main.pdf",
+          "accessed_on": "2026-09-30",
+          "locator": "Fig. 6, printed p. 6 (PDF p. 7), Salmon, raw; sections 3.2.3 and 4 explain food match and PKeq total"
+        }
+      ],
+      "range": {
+        "low": 16,
+        "high": 18
+      },
+      "review_needed": true
+    }
+  }
+}
