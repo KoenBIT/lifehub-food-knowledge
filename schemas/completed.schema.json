@@ -1,0 +1,3226 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "canonical_food_id": {
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "failure_code": {
+      "enum": [
+        "none",
+        "insufficient_sources",
+        "incompatible_definition",
+        "ambiguous_food"
+      ],
+      "type": "string"
+    },
+    "job_id": {
+      "maxLength": 100,
+      "minLength": 1,
+      "pattern": "^food-[a-z0-9-]+-r[0-9]{4}$",
+      "type": "string"
+    },
+    "nutrients": {
+      "additionalProperties": false,
+      "properties": {
+        "calcium": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "calcium"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 5000,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 5000,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 5000,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "carbs": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "available_carbohydrate"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "fat": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_lipid"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "fiber": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_dietary_fibre"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "folate": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "dietary_folate_equivalents"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 10000,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 10000,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 10000,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "iron": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "iron"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 200,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 200,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 200,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "kcal": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "food_energy"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 900,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 900,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "kcal_per_100g"
+            },
+            "value": {
+              "maximum": 900,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "magnesium": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "magnesium"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 3000,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 3000,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 3000,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "omega_3": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_cis_n3_pufa"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "potassium": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "potassium"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 10000,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 10000,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 10000,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "protein": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_protein"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "saturated_fat": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_saturated_fatty_acids"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "selenium": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "selenium"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 5000,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 5000,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 5000,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "sodium": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "sodium_not_salt"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 40,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 40,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 40,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "sugar": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_mono_disaccharides"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "vitamin_a": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "retinol_activity_equivalents"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 30000,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 30000,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 30000,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "vitamin_b1": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "thiamin"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "vitamin_b12": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "cobalamin"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 1000,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 1000,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 1000,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "vitamin_b2": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "riboflavin"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "vitamin_b6": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_vitamin_b6"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "vitamin_c": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_ascorbic_acid"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 3000,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 3000,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 3000,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "vitamin_d": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "d2_plus_d3_plus_25ohd3_unweighted"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 300,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 300,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 300,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "vitamin_e": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "nevo_alpha_tocopherol_equivalents"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 200,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 200,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 200,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "vitamin_k": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "k1_plus_k2_mk4_to_mk10"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 5000,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 5000,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 5000,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        },
+        "zinc": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "zinc"
+            },
+            "evidence_kind": {
+              "enum": [
+                "researched",
+                "estimated",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "method": {
+              "enum": [
+                "openai_research_estimate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "high": {
+                      "maximum": 200,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "low": {
+                      "maximum": 200,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "low",
+                    "high"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "references": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "accessed_on": {
+                    "maxLength": 10,
+                    "minLength": 1,
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  },
+                  "locator": {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 160,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "url": {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "url",
+                  "accessed_on",
+                  "locator"
+                ],
+                "type": "object"
+              },
+              "maxItems": 5,
+              "minItems": 0,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "review_needed": {
+              "type": "boolean"
+            },
+            "source_notes": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 200,
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence",
+            "evidence_kind",
+            "source_notes",
+            "references",
+            "range",
+            "review_needed"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "request_hash": {
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "research_version": {
+      "maximum": 9999,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "researched_on": {
+      "maxLength": 10,
+      "minLength": 1,
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "type": "string"
+    },
+    "review_needed": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "const": "1"
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "failed"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "job_id",
+    "canonical_food_id",
+    "research_version",
+    "request_hash",
+    "status",
+    "nutrients",
+    "review_needed",
+    "failure_code",
+    "researched_on"
+  ],
+  "type": "object"
+}
