@@ -1,0 +1,136 @@
+{
+  "schema_version": "1",
+  "job_id": "food-salmon-raw-fresh-r0001",
+  "canonical_food_id": "salmon-raw-fresh",
+  "research_version": 1,
+  "request_hash": "23c5432c61c0606bd72fe8beae51dd49671c87ada2659af5ce071dcb1566c6bb",
+  "status": "completed",
+  "nutrients": {
+    "carbs": {
+      "value": 0,
+      "unit": "g_per_100g",
+      "definition": "available_carbohydrate",
+      "method": "openai_research_estimate",
+      "confidence": 0.7,
+      "evidence_kind": "estimated",
+      "source_notes": "Both raw Atlantic salmon records report available carbohydrate 0 g/100 g as sugar plus starch (MI0181); components are authoritative logical-zero estimates (source 50), not measured zeros. Applied to plain fresh raw salmon as a category estimate; species is unspecified. Edible flesh without skin/bones; source classifications include chilling/freezing.",
+      "references": [
+        {
+          "title": "Norwegian Food Composition Table: Salmon, farmed, raw",
+          "url": "https://www.matvaretabellen.no/en/salmon-farmed-raw/",
+          "accessed_on": "2026-09-30",
+          "locator": "Food ID 04.220; Carbohydrate; MI0181; source 50 for constituent logical zeros"
+        },
+        {
+          "title": "Norwegian Food Composition Table: Salmon, ocean, raw",
+          "url": "https://www.matvaretabellen.no/en/salmon-ocean-raw/",
+          "accessed_on": "2026-09-30",
+          "locator": "Food ID 04.015; Carbohydrate; MI0181; source 50 for constituent logical zeros"
+        }
+      ],
+      "range": null,
+      "review_needed": true
+    },
+    "vitamin_d": {
+      "value": null,
+      "unit": "ug_per_100g",
+      "definition": "d2_plus_d3_plus_25ohd3_unweighted",
+      "method": "unknown",
+      "confidence": 0,
+      "evidence_kind": "unknown",
+      "source_notes": "Unknown: Norwegian documentation defines vitamin D as D3; the raw salmon values do not establish the required unweighted D2+D3+25-OH-D3 sum. A salmon study measuring D3/25-OH-D3 was located, but its full evidence was inaccessible and a compatible D2-inclusive result was not verified. No missing component was assumed zero.",
+      "references": [],
+      "range": null,
+      "review_needed": true
+    },
+    "vitamin_e": {
+      "value": null,
+      "unit": "mg_per_100g",
+      "definition": "nevo_alpha_tocopherol_equivalents",
+      "method": "unknown",
+      "confidence": 0,
+      "evidence_kind": "unknown",
+      "source_notes": "Unknown: Norwegian documentation maps its vitamin E to alpha-tocopherol. NEVO 2025 requires alpha + 0.40*beta + 0.10*gamma + 0.01*delta tocopherol (p.29). Complete matched raw-salmon component data or a verified NEVO-equivalent total was not obtained; alpha alone was not substituted.",
+      "references": [],
+      "range": null,
+      "review_needed": true
+    },
+    "vitamin_k": {
+      "value": null,
+      "unit": "ug_per_100g",
+      "definition": "k1_plus_k2_mk4_to_mk10",
+      "method": "unknown",
+      "confidence": 0,
+      "evidence_kind": "unknown",
+      "source_notes": "Unknown: the Norwegian raw-salmon records do not report vitamin K. A paper, Menaquinone Content of Cheese (2018), includes salmon and K1/MK4-MK10, but full-text access was blocked and species, preparation and fresh edible portion could not be verified. K1 alone or a cooked-salmon MK4 value cannot establish the requested total.",
+      "references": [],
+      "range": null,
+      "review_needed": true
+    },
+    "folate": {
+      "value": 10,
+      "unit": "ug_per_100g",
+      "definition": "dietary_folate_equivalents",
+      "method": "openai_research_estimate",
+      "confidence": 0.35,
+      "evidence_kind": "estimated",
+      "source_notes": "Exploratory category proxy: equal midpoint of 7 ug food folate (farmed Atlantic, source 321b) and 13 ug (wild Atlantic, source 20, itself estimated). For plain unfortified fish, natural food folate converts 1:1 to DFE per NIH. Range 7-13 is these two record values, not a population interval. Species/farming shares and fresh-only data are unavailable; sources classify chilling/freezing.",
+      "references": [
+        {
+          "title": "Norwegian Food Composition Table: Salmon, farmed, raw",
+          "url": "https://www.matvaretabellen.no/en/salmon-farmed-raw/",
+          "accessed_on": "2026-09-30",
+          "locator": "Food ID 04.220; Vitamin B9 (folate), 7 ug/100 g; source 321b"
+        },
+        {
+          "title": "Norwegian Food Composition Table: Salmon, ocean, raw",
+          "url": "https://www.matvaretabellen.no/en/salmon-ocean-raw/",
+          "accessed_on": "2026-09-30",
+          "locator": "Food ID 04.015; Vitamin B9 (folate), 13 ug/100 g; estimated source 20"
+        },
+        {
+          "title": "NIH Office of Dietary Supplements: Folate, Health Professional Fact Sheet",
+          "url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/",
+          "accessed_on": "2026-09-30",
+          "locator": "Recommended Intakes: 1 mcg DFE = 1 mcg food folate"
+        }
+      ],
+      "range": {
+        "low": 7,
+        "high": 13
+      },
+      "review_needed": true
+    },
+    "omega_3": {
+      "value": 2.35,
+      "unit": "g_per_100g",
+      "definition": "total_cis_n3_pufa",
+      "method": "openai_research_estimate",
+      "confidence": 0.35,
+      "evidence_kind": "estimated",
+      "source_notes": "Exploratory category proxy: equal midpoint of reported 2.6 g (farmed Atlantic) and 2.1 g (wild Atlantic) per 100 g edible raw flesh. Both records explicitly define total cis n-3 PUFA, not EPA+DHA. Range 2.1-2.6 is the two rounded record values, not a population interval. No species/farming weights are supplied; Pacific salmon is unrepresented and source preservation includes chilling/freezing.",
+      "references": [
+        {
+          "title": "Norwegian Food Composition Table: Salmon, farmed, raw",
+          "url": "https://www.matvaretabellen.no/en/salmon-farmed-raw/",
+          "accessed_on": "2026-09-30",
+          "locator": "Food ID 04.220; Omega-3, 2.6 g/100 g; source 321f; method: total cis n-3 PUFA sum"
+        },
+        {
+          "title": "Norwegian Food Composition Table: Salmon, ocean, raw",
+          "url": "https://www.matvaretabellen.no/en/salmon-ocean-raw/",
+          "accessed_on": "2026-09-30",
+          "locator": "Food ID 04.015; Omega-3, 2.1 g/100 g; source 73b; method: total cis n-3 PUFA sum"
+        }
+      ],
+      "range": {
+        "low": 2.1,
+        "high": 2.6
+      },
+      "review_needed": true
+    }
+  },
+  "review_needed": true,
+  "failure_code": "none",
+  "researched_on": "2026-09-30"
+}
