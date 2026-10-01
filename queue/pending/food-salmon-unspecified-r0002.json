@@ -13,256 +13,31 @@
     "form": "unspecified",
     "job_id": "food-salmon-unspecified-r0002",
     "known_nutrients": {
-      "calcium": {
-        "confidence": 0.438155,
-        "definition": "calcium",
-        "method": "category_weighted_median",
-        "source_definition": "calcium",
-        "source_label": "calcium",
-        "source_scope": "food_value",
-        "unit": "mg_per_100g",
-        "value": 12
-      },
-      "carbs": {
-        "confidence": 0.086357,
-        "definition": "available_carbohydrate",
-        "method": "category_weighted_median",
-        "source_definition": "available_carbohydrate",
-        "source_label": "carbs",
-        "source_scope": "food_value",
-        "unit": "g_per_100g",
-        "value": 0
-      },
-      "fat": {
-        "confidence": 0.453443,
-        "definition": "total_lipid",
-        "method": "category_weighted_median",
-        "source_definition": "total_lipid",
-        "source_label": "fat",
-        "source_scope": "food_value",
-        "unit": "g_per_100g",
-        "value": 11
-      },
-      "fiber": {
-        "confidence": 0.627621,
-        "definition": "total_dietary_fibre",
-        "method": "category_weighted_median",
-        "source_definition": "total_dietary_fibre",
-        "source_label": "fiber",
-        "source_scope": "food_value",
-        "unit": "g_per_100g",
-        "value": 0
-      },
-      "folate": {
-        "confidence": 0.316802,
-        "definition": "folate",
-        "method": "category_weighted_median",
-        "source_definition": "dietary_folate_equivalents; Folate, DFE",
-        "source_label": "folate",
-        "source_scope": "food_value",
-        "unit": "ug_per_100g",
-        "value": 6.8
-      },
-      "iron": {
-        "confidence": 0.394922,
-        "definition": "iron",
-        "method": "category_weighted_median",
-        "source_definition": "iron",
-        "source_label": "iron",
-        "source_scope": "food_value",
-        "unit": "mg_per_100g",
-        "value": 0.39
-      },
-      "kcal": {
-        "confidence": 0.511054,
-        "definition": "food_energy",
-        "method": "category_weighted_median",
-        "source_definition": "food_energy",
-        "source_label": "kcal",
-        "source_scope": "food_value",
-        "unit": "kcal_per_100g",
-        "value": 182
-      },
-      "magnesium": {
-        "confidence": 0.555017,
-        "definition": "magnesium",
-        "method": "category_weighted_median",
-        "source_definition": "magnesium",
-        "source_label": "magnesium",
-        "source_scope": "food_value",
-        "unit": "mg_per_100g",
-        "value": 34
-      },
-      "omega_3": {
-        "confidence": 0.070805,
-        "definition": "total_omega_3",
-        "method": "category_weighted_median",
-        "source_definition": "total_cis_n3_pufa",
-        "source_label": "Total omega-3",
-        "source_scope": "food_value",
-        "unit": "g_per_100g",
-        "value": 2.7
-      },
-      "potassium": {
-        "confidence": 0.619546,
-        "definition": "potassium",
-        "method": "category_weighted_median",
-        "source_definition": "potassium",
-        "source_label": "potassium",
-        "source_scope": "food_value",
-        "unit": "mg_per_100g",
-        "value": 455
-      },
-      "protein": {
-        "confidence": 0.572087,
-        "definition": "total_protein",
-        "method": "category_weighted_median",
-        "source_definition": "total_protein",
-        "source_label": "protein",
-        "source_scope": "food_value",
-        "unit": "g_per_100g",
-        "value": 25.2
-      },
-      "saturated_fat": {
-        "confidence": 0.42867,
-        "definition": "total_saturated_fatty_acids",
-        "method": "category_weighted_median",
-        "source_definition": "total_saturated_fatty_acids",
-        "source_label": "saturated fat",
-        "source_scope": "food_value",
-        "unit": "g_per_100g",
-        "value": 2.3
-      },
-      "selenium": {
-        "confidence": 0.427976,
-        "definition": "selenium",
-        "method": "category_weighted_median",
-        "source_definition": "selenium",
-        "source_label": "selenium",
-        "source_scope": "food_value",
-        "unit": "ug_per_100g",
-        "value": 32.1
-      },
-      "sodium": {
-        "confidence": 0.524848,
-        "definition": "sodium_not_salt",
-        "method": "category_weighted_median",
-        "source_definition": "sodium_not_salt",
-        "source_label": "sodium",
-        "source_scope": "food_value",
-        "unit": "g_per_100g",
-        "value": 0.053
-      },
-      "sugar": {
-        "confidence": 0.365012,
-        "definition": "total_mono_disaccharides",
-        "method": "category_weighted_median",
-        "source_definition": "total_mono_disaccharides",
-        "source_label": "sugar",
-        "source_scope": "food_value",
-        "unit": "g_per_100g",
-        "value": 0
-      },
-      "vitamin_a": {
-        "confidence": 0.30729,
-        "definition": "vitamin_a",
-        "method": "category_weighted_median",
-        "source_definition": "retinol_activity_equivalents; Vitamin A, RAE",
-        "source_label": "Vitamin A",
-        "source_scope": "food_value",
-        "unit": "ug_per_100g",
-        "value": 32
-      },
-      "vitamin_b1": {
-        "confidence": 0.297178,
-        "definition": "thiamin",
-        "method": "category_weighted_median",
-        "source_definition": "thiamin",
-        "source_label": "Vitamin B1",
-        "source_scope": "food_value",
-        "unit": "mg_per_100g",
-        "value": 0.12
-      },
-      "vitamin_b12": {
-        "confidence": 0.542422,
-        "definition": "cobalamin",
-        "method": "category_weighted_median",
-        "source_definition": "cobalamin",
-        "source_label": "Vitamin B12",
-        "source_scope": "food_value",
-        "unit": "ug_per_100g",
-        "value": 3.87
-      },
-      "vitamin_b2": {
-        "confidence": 0.452079,
-        "definition": "riboflavin",
-        "method": "category_weighted_median",
-        "source_definition": "riboflavin",
-        "source_label": "Vitamin B2",
-        "source_scope": "food_value",
-        "unit": "mg_per_100g",
-        "value": 0.126
-      },
-      "vitamin_b6": {
-        "confidence": 0.477656,
-        "definition": "total_vitamin_b6",
-        "method": "category_weighted_median",
-        "source_definition": "total_vitamin_b6",
-        "source_label": "Vitamin B6",
-        "source_scope": "food_value",
-        "unit": "mg_per_100g",
-        "value": 0.51
-      },
-      "vitamin_c": {
-        "confidence": 0.252808,
-        "definition": "total_ascorbic_acid",
-        "method": "category_weighted_median",
-        "source_definition": "total_ascorbic_acid",
-        "source_label": "Vitamin C",
-        "source_scope": "food_value",
-        "unit": "mg_per_100g",
-        "value": 1.4
-      },
-      "vitamin_d": {
-        "confidence": 0.252413,
-        "definition": "vitamin_d",
-        "method": "category_weighted_median",
-        "source_definition": "d2_plus_d3_plus_25ohd3_unweighted; Vitamin D (D2 + D3)",
-        "source_label": "Vitamin D",
-        "source_scope": "food_value",
-        "unit": "ug_per_100g",
-        "value": 11.3
-      },
-      "vitamin_e": {
-        "confidence": 0.137911,
-        "definition": "vitamin_e",
-        "method": "category_weighted_median",
-        "source_definition": "nevo_alpha_tocopherol_equivalents; Vitamin E (alpha-tocopherol)",
-        "source_label": "Vitamin E",
-        "source_scope": "food_value",
-        "unit": "mg_per_100g",
-        "value": 1.4
-      },
-      "vitamin_k": {
-        "confidence": 0.064002,
-        "definition": "vitamin_k",
-        "method": "category_weighted_median",
-        "source_definition": "Vitamin K (phylloquinone)",
-        "source_label": "Vitamin K",
-        "source_scope": "food_value",
-        "unit": "ug_per_100g",
-        "value": 0.1
-      },
-      "zinc": {
-        "confidence": 0.558607,
-        "definition": "zinc",
-        "method": "category_weighted_median",
-        "source_definition": "zinc",
-        "source_label": "zinc",
-        "source_scope": "food_value",
-        "unit": "mg_per_100g",
-        "value": 0.48
-      }
+      "calcium": {"confidence":0.438155,"definition":"calcium","method":"category_weighted_median","source_definition":"calcium","source_label":"calcium","source_scope":"food_value","unit":"mg_per_100g","value":12},
+      "carbs": {"confidence":0.086357,"definition":"available_carbohydrate","method":"category_weighted_median","source_definition":"available_carbohydrate","source_label":"carbs","source_scope":"food_value","unit":"g_per_100g","value":0},
+      "fat": {"confidence":0.453443,"definition":"total_lipid","method":"category_weighted_median","source_definition":"total_lipid","source_label":"fat","source_scope":"food_value","unit":"g_per_100g","value":11},
+      "fiber": {"confidence":0.627621,"definition":"total_dietary_fibre","method":"category_weighted_median","source_definition":"total_dietary_fibre","source_label":"fiber","source_scope":"food_value","unit":"g_per_100g","value":0},
+      "folate": {"confidence":0.316802,"definition":"folate","method":"category_weighted_median","source_definition":"dietary_folate_equivalents; Folate, DFE","source_label":"folate","source_scope":"food_value","unit":"ug_per_100g","value":6.8},
+      "iron": {"confidence":0.394922,"definition":"iron","method":"category_weighted_median","source_definition":"iron","source_label":"iron","source_scope":"food_value","unit":"mg_per_100g","value":0.39},
+      "kcal": {"confidence":0.511054,"definition":"food_energy","method":"category_weighted_median","source_definition":"food_energy","source_label":"kcal","source_scope":"food_value","unit":"kcal_per_100g","value":182},
+      "magnesium": {"confidence":0.555017,"definition":"magnesium","method":"category_weighted_median","source_definition":"magnesium","source_label":"magnesium","source_scope":"food_value","unit":"mg_per_100g","value":34},
+      "omega_3": {"confidence":0.070805,"definition":"total_omega_3","method":"category_weighted_median","source_definition":"total_cis_n3_pufa","source_label":"Total omega-3","source_scope":"food_value","unit":"g_per_100g","value":2.7},
+      "potassium": {"confidence":0.619546,"definition":"potassium","method":"category_weighted_median","source_definition":"potassium","source_label":"potassium","source_scope":"food_value","unit":"mg_per_100g","value":455},
+      "protein": {"confidence":0.572087,"definition":"total_protein","method":"category_weighted_median","source_definition":"total_protein","source_label":"protein","source_scope":"food_value","unit":"g_per_100g","value":25.2},
+      "saturated_fat": {"confidence":0.42867,"definition":"total_saturated_fatty_acids","method":"category_weighted_median","source_definition":"total_saturated_fatty_acids","source_label":"saturated fat","source_scope":"food_value","unit":"g_per_100g","value":2.3},
+      "selenium": {"confidence":0.427976,"definition":"selenium","method":"category_weighted_median","source_definition":"selenium","source_label":"selenium","source_scope":"food_value","unit":"ug_per_100g","value":32.1},
+      "sodium": {"confidence":0.524848,"definition":"sodium_not_salt","method":"category_weighted_median","source_definition":"sodium_not_salt","source_label":"sodium","source_scope":"food_value","unit":"g_per_100g","value":0.053},
+      "sugar": {"confidence":0.365012,"definition":"total_mono_disaccharides","method":"category_weighted_median","source_definition":"total_mono_disaccharides","source_label":"sugar","source_scope":"food_value","unit":"g_per_100g","value":0},
+      "vitamin_a": {"confidence":0.30729,"definition":"vitamin_a","method":"category_weighted_median","source_definition":"retinol_activity_equivalents; Vitamin A, RAE","source_label":"Vitamin A","source_scope":"food_value","unit":"ug_per_100g","value":32},
+      "vitamin_b1": {"confidence":0.297178,"definition":"thiamin","method":"category_weighted_median","source_definition":"thiamin","source_label":"Vitamin B1","source_scope":"food_value","unit":"mg_per_100g","value":0.12},
+      "vitamin_b12": {"confidence":0.542422,"definition":"cobalamin","method":"category_weighted_median","source_definition":"cobalamin","source_label":"Vitamin B12","source_scope":"food_value","unit":"ug_per_100g","value":3.87},
+      "vitamin_b2": {"confidence":0.452079,"definition":"riboflavin","method":"category_weighted_median","source_definition":"riboflavin","source_label":"Vitamin B2","source_scope":"food_value","unit":"mg_per_100g","value":0.126},
+      "vitamin_b6": {"confidence":0.477656,"definition":"total_vitamin_b6","method":"category_weighted_median","source_definition":"total_vitamin_b6","source_label":"Vitamin B6","source_scope":"food_value","unit":"mg_per_100g","value":0.51},
+      "vitamin_c": {"confidence":0.252808,"definition":"total_ascorbic_acid","method":"category_weighted_median","source_definition":"total_ascorbic_acid","source_label":"Vitamin C","source_scope":"food_value","unit":"mg_per_100g","value":1.4},
+      "vitamin_d": {"confidence":0.252413,"definition":"vitamin_d","method":"category_weighted_median","source_definition":"d2_plus_d3_plus_25ohd3_unweighted; Vitamin D (D2 + D3)","source_label":"Vitamin D","source_scope":"food_value","unit":"ug_per_100g","value":11.3},
+      "vitamin_e": {"confidence":0.137911,"definition":"vitamin_e","method":"category_weighted_median","source_definition":"nevo_alpha_tocopherol_equivalents; Vitamin E (alpha-tocopherol)","source_label":"Vitamin E","source_scope":"food_value","unit":"mg_per_100g","value":1.4},
+      "vitamin_k": {"confidence":0.064002,"definition":"vitamin_k","method":"category_weighted_median","source_definition":"Vitamin K (phylloquinone)","source_label":"Vitamin K","source_scope":"food_value","unit":"ug_per_100g","value":0.1},
+      "zinc": {"confidence":0.558607,"definition":"zinc","method":"category_weighted_median","source_definition":"zinc","source_label":"zinc","source_scope":"food_value","unit":"mg_per_100g","value":0.48}
     },
     "language": "en",
     "missing_nutrients": [],
@@ -272,32 +47,42 @@
     "priority": 20,
     "request_hash": "d9ba9414f99723a321b130c4044d587962308add8ac6879c6aec658c1d9e1540",
     "request_hash_version": "jcs-sha256-v1",
-    "requested_nutrients": [
-      "carbs",
-      "vitamin_a",
-      "vitamin_b1",
-      "vitamin_c",
-      "vitamin_d",
-      "vitamin_e",
-      "vitamin_k",
-      "folate",
-      "omega_3"
-    ],
-    "research_reasons": [
-      "low_confidence_category"
-    ],
+    "requested_nutrients": ["carbs","vitamin_a","vitamin_b1","vitamin_c","vitamin_d","vitamin_e","vitamin_k","folate","omega_3"],
+    "research_reasons": ["low_confidence_category"],
     "research_version": 2,
     "schema_version": "2"
   },
-  "result": null,
-  "result_hash": null,
+  "result": {
+    "schema_version": "2",
+    "job_id": "food-salmon-unspecified-r0002",
+    "canonical_food_id": "salmon-unspecified",
+    "research_version": 2,
+    "request_hash": "d9ba9414f99723a321b130c4044d587962308add8ac6879c6aec658c1d9e1540",
+    "status": "completed",
+    "nutrients": {
+      "carbs": {"value":0,"unit":"g_per_100g","definition":"available_carbohydrate","method":"openai_research_estimate","confidence":0.8,"evidence_kind":"researched","source_notes":"Both Norwegian farmed and wild raw salmon tables report 0 g available carbohydrate; USDA FDC 2684441 also reports 0 g carbohydrate.","references":[{"title":"Salmon, farmed, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-farmed-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Salmon, ocean, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-ocean-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Atlantic Salmon (Raw) — USDA FoodData Central record 2684441","url":"https://fitnutrition.net/nutrition-facts/atlantic-salmon/","accessed_on":"2026-10-01","locator":"USDA FDC 2684441; per 100 g nutrient profile"}],"range":{"low":0,"high":0},"review_needed":false,"source_label":"Carbohydrate","source_definition":"available carbohydrate","source_scope":"food_value"},
+      "vitamin_a": {"value":26,"unit":"ug_per_100g","definition":"vitamin_a","method":"openai_research_estimate","confidence":0.55,"evidence_kind":"researched","source_notes":"Raw salmon varies materially by production/species: Norwegian farmed Atlantic reports 26 µg RAE, ocean/wild Atlantic 0 µg RAE, and USDA FDC 2684441 farmed Atlantic reports 58 µg RAE. 26 µg RAE is used as a practical farmed-Atlantic representative.","references":[{"title":"Salmon, farmed, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-farmed-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Salmon, ocean, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-ocean-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Atlantic Salmon (Raw) — USDA FoodData Central record 2684441","url":"https://fitnutrition.net/nutrition-facts/atlantic-salmon/","accessed_on":"2026-10-01","locator":"USDA FDC 2684441; per 100 g nutrient profile"}],"range":{"low":0,"high":58},"review_needed":true,"source_label":"Vitamin A (RAE)","source_definition":"retinol activity equivalents (RAE)","source_scope":"food_value"},
+      "vitamin_b1": {"value":0.2,"unit":"mg_per_100g","definition":"thiamin","method":"openai_research_estimate","confidence":0.75,"evidence_kind":"researched","source_notes":"Official Norwegian values are 0.12 mg/100 g for farmed raw salmon and 0.20 mg/100 g for ocean/wild raw salmon; USDA FDC 2684441 reports about 0.207 mg/100 g.","references":[{"title":"Salmon, farmed, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-farmed-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Salmon, ocean, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-ocean-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Atlantic Salmon (Raw) — USDA FoodData Central record 2684441","url":"https://fitnutrition.net/nutrition-facts/atlantic-salmon/","accessed_on":"2026-10-01","locator":"USDA FDC 2684441; per 100 g nutrient profile"}],"range":{"low":0.12,"high":0.207},"review_needed":false,"source_label":"Vitamin B1 (thiamin)","source_definition":"thiamin","source_scope":"food_value"},
+      "vitamin_c": {"value":0,"unit":"mg_per_100g","definition":"total_ascorbic_acid","method":"openai_research_estimate","confidence":0.45,"evidence_kind":"researched","source_notes":"Norwegian farmed and wild raw salmon tables both explicitly use a logical zero for vitamin C, while USDA FDC 2684441 reports 3.9 mg/100 g. Zero is retained as the conservative common-table value but the cross-source conflict requires review.","references":[{"title":"Salmon, farmed, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-farmed-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Salmon, ocean, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-ocean-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Atlantic Salmon (Raw) — USDA FoodData Central record 2684441","url":"https://fitnutrition.net/nutrition-facts/atlantic-salmon/","accessed_on":"2026-10-01","locator":"USDA FDC 2684441; per 100 g nutrient profile"}],"range":{"low":0,"high":3.9},"review_needed":true,"source_label":"Vitamin C (ascorbic acid)","source_definition":"ascorbic acid","source_scope":"food_value"},
+      "vitamin_d": {"value":8,"unit":"ug_per_100g","definition":"vitamin_d","method":"openai_research_estimate","confidence":0.75,"evidence_kind":"researched","source_notes":"Norwegian raw salmon values are 7 µg/100 g farmed and 8 µg/100 g ocean/wild; USDA FDC 2684441 reports 11 µg/100 g D2+D3. 8 µg/100 g is a representative generic raw-salmon value.","references":[{"title":"Salmon, farmed, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-farmed-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Salmon, ocean, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-ocean-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Atlantic Salmon (Raw) — USDA FoodData Central record 2684441","url":"https://fitnutrition.net/nutrition-facts/atlantic-salmon/","accessed_on":"2026-10-01","locator":"USDA FDC 2684441; per 100 g nutrient profile"}],"range":{"low":7,"high":11},"review_needed":false,"source_label":"Vitamin D","source_definition":"source-reported vitamin D","source_scope":"food_value"},
+      "vitamin_e": {"value":1.4,"unit":"mg_per_100g","definition":"vitamin_e","method":"openai_research_estimate","confidence":0.65,"evidence_kind":"researched","source_notes":"Norwegian raw salmon values cluster at 1.3–1.4 mg-ATE/100 g, whereas USDA FDC 2684441 reports 3.55 mg alpha-tocopherol/100 g. The Norwegian common-food value is used and the definition/source difference is flagged.","references":[{"title":"Salmon, farmed, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-farmed-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Salmon, ocean, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-ocean-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Atlantic Salmon (Raw) — USDA FoodData Central record 2684441","url":"https://fitnutrition.net/nutrition-facts/atlantic-salmon/","accessed_on":"2026-10-01","locator":"USDA FDC 2684441; per 100 g nutrient profile"}],"range":{"low":1.3,"high":3.55},"review_needed":true,"source_label":"Vitamin E","source_definition":"alpha-tocopherol equivalents / alpha-tocopherol","source_scope":"food_value"},
+      "vitamin_k": {"value":0.5,"unit":"ug_per_100g","definition":"vitamin_k","method":"openai_research_estimate","confidence":0.6,"evidence_kind":"researched","source_notes":"The Norwegian salmon pages do not report vitamin K. USDA FDC 2684441 reports 0.5 µg/100 g phylloquinone with 0 µg MK-4 and 0 µg dihydrophylloquinone. The K1 value is used as the ordinary food-composition estimate.","references":[{"title":"Atlantic Salmon (Raw) — USDA FoodData Central record 2684441","url":"https://fitnutrition.net/nutrition-facts/atlantic-salmon/","accessed_on":"2026-10-01","locator":"USDA FDC 2684441; per 100 g nutrient profile"}],"range":{"low":0.1,"high":0.5},"review_needed":true,"source_label":"Vitamin K (phylloquinone)","source_definition":"phylloquinone","source_scope":"food_value"},
+      "folate": {"value":13,"unit":"ug_per_100g","definition":"folate","method":"openai_research_estimate","confidence":0.6,"evidence_kind":"researched","source_notes":"Norwegian raw salmon values are 7 µg/100 g farmed and 13 µg/100 g ocean/wild; USDA FDC 2684441 reports 26 µg/100 g food folate/DFE. 13 µg/100 g is used as the middle representative value with review for production/species variation.","references":[{"title":"Salmon, farmed, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-farmed-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Salmon, ocean, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-ocean-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Atlantic Salmon (Raw) — USDA FoodData Central record 2684441","url":"https://fitnutrition.net/nutrition-facts/atlantic-salmon/","accessed_on":"2026-10-01","locator":"USDA FDC 2684441; per 100 g nutrient profile"}],"range":{"low":7,"high":26},"review_needed":true,"source_label":"Vitamin B9 (folate)","source_definition":"folate","source_scope":"food_value"},
+      "omega_3": {"value":2.4,"unit":"g_per_100g","definition":"total_omega_3","method":"openai_research_estimate","confidence":0.8,"evidence_kind":"researched","source_notes":"The Norwegian tables report total cis n-3 PUFA of 2.6 g/100 g for farmed raw salmon and 2.1 g/100 g for ocean/wild raw salmon. A midpoint representative estimate of 2.4 g/100 g is used.","references":[{"title":"Salmon, farmed, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-farmed-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"},{"title":"Salmon, ocean, raw — Norwegian Food Composition Table","url":"https://www.matvaretabellen.no/en/salmon-ocean-raw/","accessed_on":"2026-10-01","locator":"Per 100 g; macros, fatty acids and vitamins"}],"range":{"low":2.1,"high":2.6},"review_needed":false,"source_label":"Omega-3","source_definition":"fatty acids, total cis n-3 polyunsaturated, calculated as sum of cis n-3 polyunsaturated fatty acids","source_scope":"food_value"}
+    },
+    "review_needed": true,
+    "failure_code": "none",
+    "researched_on": "2026-10-01",
+    "nutrient_definition_version": "common-food-v2"
+  },
+  "result_hash": "695656ab70a8b42842a238bd3cbcbc966651f8433c8dbc3411952b6e8bdb3704",
   "schema_version": "3",
   "state": {
-    "status": "in_progress",
+    "status": "completed",
     "claim_id": "3f6a2c71b98e45d0a4c9127ef1435b2a",
     "claimed_at": "2026-10-01T10:43:00Z",
-    "lease_until": "2026-10-01T12:43:00Z",
-    "completed_at": null,
+    "lease_until": null,
+    "completed_at": "2026-10-01T10:51:00Z",
     "previous_claim": null
   }
 }
