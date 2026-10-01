@@ -21,7 +21,7 @@
         "source_label": "calcium",
         "source_scope": "food_value",
         "unit": "mg_per_100g",
-        "value": 12.0
+        "value": 12
       },
       "carbs": {
         "confidence": 0.086357,
@@ -31,7 +31,7 @@
         "source_label": "carbs",
         "source_scope": "food_value",
         "unit": "g_per_100g",
-        "value": 0.0
+        "value": 0
       },
       "fat": {
         "confidence": 0.453443,
@@ -41,7 +41,7 @@
         "source_label": "fat",
         "source_scope": "food_value",
         "unit": "g_per_100g",
-        "value": 11.0
+        "value": 11
       },
       "fiber": {
         "confidence": 0.627621,
@@ -51,7 +51,7 @@
         "source_label": "fiber",
         "source_scope": "food_value",
         "unit": "g_per_100g",
-        "value": 0.0
+        "value": 0
       },
       "folate": {
         "confidence": 0.316802,
@@ -81,7 +81,7 @@
         "source_label": "kcal",
         "source_scope": "food_value",
         "unit": "kcal_per_100g",
-        "value": 182.0
+        "value": 182
       },
       "magnesium": {
         "confidence": 0.555017,
@@ -91,7 +91,7 @@
         "source_label": "magnesium",
         "source_scope": "food_value",
         "unit": "mg_per_100g",
-        "value": 34.0
+        "value": 34
       },
       "omega_3": {
         "confidence": 0.070805,
@@ -111,7 +111,7 @@
         "source_label": "potassium",
         "source_scope": "food_value",
         "unit": "mg_per_100g",
-        "value": 455.0
+        "value": 455
       },
       "protein": {
         "confidence": 0.572087,
@@ -161,7 +161,7 @@
         "source_label": "sugar",
         "source_scope": "food_value",
         "unit": "g_per_100g",
-        "value": 0.0
+        "value": 0
       },
       "vitamin_a": {
         "confidence": 0.30729,
@@ -171,7 +171,7 @@
         "source_label": "Vitamin A",
         "source_scope": "food_value",
         "unit": "ug_per_100g",
-        "value": 32.0
+        "value": 32
       },
       "vitamin_b1": {
         "confidence": 0.297178,
@@ -293,11 +293,11 @@
   "result_hash": null,
   "schema_version": "3",
   "state": {
-    "claim_id": null,
-    "claimed_at": null,
+    "status": "in_progress",
+    "claim_id": "3f6a2c71b98e45d0a4c9127ef1435b2a",
+    "claimed_at": "2026-10-01T10:43:00Z",
+    "lease_until": "2026-10-01T12:43:00Z",
     "completed_at": null,
-    "lease_until": null,
-    "previous_claim": null,
-    "status": "pending"
+    "previous_claim": null
   }
 }
