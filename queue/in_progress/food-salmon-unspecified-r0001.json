@@ -1,0 +1,208 @@
+{
+  "aliases": [
+    "zalm"
+  ],
+  "canonical_food_id": "salmon-unspecified",
+  "canonical_name": "salmon",
+  "existing_sources": [
+    "nevo",
+    "usda_fdc"
+  ],
+  "food_family": "salmon",
+  "form": "unspecified",
+  "job_id": "food-salmon-unspecified-r0001",
+  "known_nutrients": {
+    "calcium": {
+      "confidence": 0.438155,
+      "definition": "calcium",
+      "method": "category_weighted_median",
+      "unit": "mg_per_100g",
+      "value": 12.0
+    },
+    "carbs": {
+      "confidence": 0.086357,
+      "definition": "available_carbohydrate",
+      "method": "category_weighted_median",
+      "unit": "g_per_100g",
+      "value": 0.0
+    },
+    "fat": {
+      "confidence": 0.453443,
+      "definition": "total_lipid",
+      "method": "category_weighted_median",
+      "unit": "g_per_100g",
+      "value": 11.0
+    },
+    "fiber": {
+      "confidence": 0.627621,
+      "definition": "total_dietary_fibre",
+      "method": "category_weighted_median",
+      "unit": "g_per_100g",
+      "value": 0.0
+    },
+    "folate": {
+      "confidence": 0.316802,
+      "definition": "dietary_folate_equivalents",
+      "method": "category_weighted_median",
+      "unit": "ug_per_100g",
+      "value": 6.8
+    },
+    "iron": {
+      "confidence": 0.394922,
+      "definition": "iron",
+      "method": "category_weighted_median",
+      "unit": "mg_per_100g",
+      "value": 0.39
+    },
+    "kcal": {
+      "confidence": 0.511054,
+      "definition": "food_energy",
+      "method": "category_weighted_median",
+      "unit": "kcal_per_100g",
+      "value": 182.0
+    },
+    "magnesium": {
+      "confidence": 0.555017,
+      "definition": "magnesium",
+      "method": "category_weighted_median",
+      "unit": "mg_per_100g",
+      "value": 34.0
+    },
+    "omega_3": {
+      "confidence": 0.070805,
+      "definition": "total_cis_n3_pufa",
+      "method": "category_weighted_median",
+      "unit": "g_per_100g",
+      "value": 2.7
+    },
+    "potassium": {
+      "confidence": 0.619546,
+      "definition": "potassium",
+      "method": "category_weighted_median",
+      "unit": "mg_per_100g",
+      "value": 455.0
+    },
+    "protein": {
+      "confidence": 0.572087,
+      "definition": "total_protein",
+      "method": "category_weighted_median",
+      "unit": "g_per_100g",
+      "value": 25.2
+    },
+    "saturated_fat": {
+      "confidence": 0.42867,
+      "definition": "total_saturated_fatty_acids",
+      "method": "category_weighted_median",
+      "unit": "g_per_100g",
+      "value": 2.3
+    },
+    "selenium": {
+      "confidence": 0.427976,
+      "definition": "selenium",
+      "method": "category_weighted_median",
+      "unit": "ug_per_100g",
+      "value": 32.1
+    },
+    "sodium": {
+      "confidence": 0.524848,
+      "definition": "sodium_not_salt",
+      "method": "category_weighted_median",
+      "unit": "g_per_100g",
+      "value": 0.053
+    },
+    "sugar": {
+      "confidence": 0.365012,
+      "definition": "total_mono_disaccharides",
+      "method": "category_weighted_median",
+      "unit": "g_per_100g",
+      "value": 0.0
+    },
+    "vitamin_a": {
+      "confidence": 0.30729,
+      "definition": "retinol_activity_equivalents",
+      "method": "category_weighted_median",
+      "unit": "ug_per_100g",
+      "value": 32.0
+    },
+    "vitamin_b1": {
+      "confidence": 0.297178,
+      "definition": "thiamin",
+      "method": "category_weighted_median",
+      "unit": "mg_per_100g",
+      "value": 0.12
+    },
+    "vitamin_b12": {
+      "confidence": 0.542422,
+      "definition": "cobalamin",
+      "method": "category_weighted_median",
+      "unit": "ug_per_100g",
+      "value": 3.87
+    },
+    "vitamin_b2": {
+      "confidence": 0.452079,
+      "definition": "riboflavin",
+      "method": "category_weighted_median",
+      "unit": "mg_per_100g",
+      "value": 0.126
+    },
+    "vitamin_b6": {
+      "confidence": 0.477656,
+      "definition": "total_vitamin_b6",
+      "method": "category_weighted_median",
+      "unit": "mg_per_100g",
+      "value": 0.51
+    },
+    "vitamin_c": {
+      "confidence": 0.252808,
+      "definition": "total_ascorbic_acid",
+      "method": "category_weighted_median",
+      "unit": "mg_per_100g",
+      "value": 1.4
+    },
+    "vitamin_d": {
+      "confidence": 0.056376,
+      "definition": "d2_plus_d3_plus_25ohd3_unweighted",
+      "method": "category_weighted_median",
+      "unit": "ug_per_100g",
+      "value": 4.6
+    },
+    "vitamin_e": {
+      "confidence": 0.079947,
+      "definition": "nevo_alpha_tocopherol_equivalents",
+      "method": "category_weighted_median",
+      "unit": "mg_per_100g",
+      "value": 1.4
+    },
+    "zinc": {
+      "confidence": 0.558607,
+      "definition": "zinc",
+      "method": "category_weighted_median",
+      "unit": "mg_per_100g",
+      "value": 0.48
+    }
+  },
+  "language": "en",
+  "missing_nutrients": [
+    "vitamin_k"
+  ],
+  "policy_version": "food-research-v1",
+  "preparation": "unspecified",
+  "priority": 20,
+  "request_hash": "c2d8e9775ae22a864b6b3102b143bdebfb9bc1d926a2875bbe250323e2021577",
+  "requested_nutrients": [
+    "carbs",
+    "vitamin_a",
+    "vitamin_b1",
+    "vitamin_c",
+    "vitamin_d",
+    "vitamin_e",
+    "vitamin_k",
+    "folate",
+    "omega_3"
+  ],
+  "research_reasons": [
+    "low_confidence_category"
+  ],
+  "research_version": 1,
+  "schema_version": "1"
+}
