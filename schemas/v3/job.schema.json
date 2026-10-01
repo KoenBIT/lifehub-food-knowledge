@@ -363,6 +363,9 @@
         },
         {
           "$ref": "../v2/pending.schema.json"
+        },
+        {
+          "$ref": "request.schema.json"
         }
       ]
     },

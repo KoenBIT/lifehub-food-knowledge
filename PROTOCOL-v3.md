@@ -12,18 +12,51 @@ Every newly published job uses `schemas/v3/job.schema.json` and lives at
 `queue/pending/<job_id>.json` throughout research. The envelope has
 `schema_version: "3"`, `request`, `state`, `result`, and `result_hash`.
 Envelope version is independent of evidence version: new requests/results still
-use the common-food V2 definitions and V2 schema. Recovery may wrap a V1 request.
+use the common-food V2 definitions and V2 result schema. New requests use the
+versioned extension in `schemas/v3/request.schema.json`. Recovery may wrap a V1 request.
 Never rewrite an existing request, including its inner schema/policy versions.
 
-`request` contains the complete original research request. Its `request_hash`
-is SHA256 of canonical bytes of request with only `request_hash` omitted.
-Canonical bytes everywhere in this protocol mean Python
-`json.dumps(object, sort_keys=True, ensure_ascii=True, indent=2, allow_nan=False)`
-plus one LF, encoded as UTF-8. Object equality means canonical-byte equality;
-envelope formatting may change during transitions. Duplicate JSON keys are invalid.
-State and result never participate in the request hash. Retain the original
-request for the attempt; recheck canonical equality and its hash before every write.
-Life Hub independently compares the complete request to its immutable local job.
+`request` contains the complete original research request. Read its hash policy:
+
+* `request_hash_version: "jcs-sha256-v1"`: SHA256 of RFC 8785 / JCS UTF-8 bytes
+  of the request with ONLY `request_hash` omitted. Include the version field.
+  No whitespace, BOM or trailing LF. Recursively sort object keys by UTF-16 code
+  units; keep array order, exact strings (no Unicode normalization), booleans
+  and null. Numbers use finite IEEE-754 binary64 and ECMAScript shortest
+  roundtrip formatting: `12`, `12.0`, `12.000` -> `12`; all zero signs -> `0`.
+  Exponents use ECMAScript rules (`1e-7`, but `0.000001`). Food request numbers
+  must have magnitude <= 9007199254740991, whether an integer or float token;
+  the normal per-field schema bounds also apply. Subnormal binary64 values
+  such as `5e-324` are supported. Arbitrary precision decimals/integers are not
+  part of this policy: parse JSON numbers as binary64, not Decimal, and do not
+  round to a chosen number of decimal places. Precision beyond binary64 has
+  no separate identity. NaN/Infinity, duplicate keys and lone surrogates fail.
+* Field absent: retain the frozen legacy SHA256 of Python
+  `json.dumps(request_without_hash, sort_keys=True, ensure_ascii=True, indent=2,
+  allow_nan=False)` plus one LF, UTF-8. This includes existing V3 envelopes.
+  Do not add a policy field or recalculate a historical hash. A runtime that
+  cannot honor a legacy numeric identity must skip that job for explicit
+  backend recovery to a fresh revision, not silently convert it.
+* Any other version, including null: reject, without fallback.
+
+State/result never participate in the request hash. Retain the original request
+object for the attempt. Before every write validate its hash AND compare the
+complete request to the original using the selected canonicalization, including
+the hash and policy fields. Life Hub repeats this comparison against the DB.
+For new-policy requests, normal JSON parse/serialize, key reordering, whitespace
+and integral-float normalization are allowed. Actual content changes fail even
+if a worker recalculates the hash. No original request substring/formatting needs
+to be copied. Strings and array order remain significant.
+
+Python uses pinned `rfc8785==0.1.4`, with the symmetric numeric-domain guard
+above; Decimal conversion is rejected. Cross-runtime fixtures and an independent
+Node.js verifier live in Life Hub's `backend/apps/nutrition/testdata/food_knowledge/`
+(`request-jcs-v1.json`, `verify-request-jcs.mjs`). The fixture includes a complete
+request, expected canonical representation and SHA256, plus numeric/Unicode
+vectors. `v3/example-jcs-pending.json` demonstrates the new policy; the original
+`v3/example-pending.json` remains a legacy-policy example.
+
+Reference: https://www.rfc-editor.org/rfc/rfc8785
 
 ## State, leases and ownership
 
@@ -69,12 +102,21 @@ is success; any different result conflicts. Never modify terminal output.
 
 ## Result retention, review and archive (Life Hub backend only)
 
-`result_hash` is SHA256 of canonical bytes of the result object alone. It excludes
+`result_hash` remains SHA256 of the **legacy Python canonical bytes** of the result
+object alone (`sort_keys=True, ensure_ascii=True, indent=2, allow_nan=False`,
+plus one LF, UTF-8). It does NOT use JCS. It excludes
 the entire request, state, envelope formatting, paths and archive metadata.
 Life Hub retains those exact canonical result bytes both locally and in its
 immutable result storage. Existing per-nutrient review/import and operator
 hashbinding operate on those bytes. Legacy results keep their original bytes
 and byte hash without reserialization. Reviews and nutrition policy stay local.
+
+Consequently changing a result number from `12.0` to `12` after hashing CAN
+invalidate result_hash. Compute that hash from the final serialized result as
+Life Hub will parse it, using this existing result policy. Do not copy
+request_hash_version into the V1/V2 result. Once terminal, do not reserialize
+result/envelope bytes. This deliberate audit boundary is independent of the
+normalization-tolerant request identity; review/operator bindings never change.
 
 Life Hub reads statuses from active pending/*.json; pending/in_progress map to
 the logical remote states, and completed/failed trigger validation and pull.
@@ -117,6 +159,21 @@ reclaim with a new ID. This avoids creating another revision or simultaneous
 research. Repeating recovery recognizes the V3 representation without resetting
 its lease. Recovery and archival use only Life Hub's backend Git Data transport.
 Development/tests must never apply this plan to the live repository.
+
+Partial-claim reconciliation retains the original hash policy; it is not a
+semantic-hash upgrade. For normalization damage use the separate read-only
+`food_knowledge_reconcile --inspect-identity --job-id <id>` preflight and the
+salmon runbook in Life Hub's `docs/food-knowledge/RECOVERY-request-identity.md`.
+It reports DB policy, remote byte/blob hashes, eligibility and blockers, never
+writes. Unknown policy, real request mutation, retained evidence or competing
+revisions prevent recovery. No migration rewrites request JSON, hashes, result
+bytes or review bindings.
+
+On publication the backend updates only current V3 entry points (`PROTOCOL.md`,
+`PROTOCOL-v3.md`, `schemas/v3/job.schema.json`) under the observed branch head and
+adds missing contracts. Frozen V1/V2 schemas, versioned request schema, queue
+history and results are not rewritten. Deploy readers/library and updated worker
+policy before allowing new-policy jobs to be processed. The DB is runtime truth.
 
 ## Hourly batch
 

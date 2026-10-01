@@ -1,0 +1,1529 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "aliases": {
+      "items": {
+        "maxLength": 120,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 20,
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "canonical_food_id": {
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "canonical_name": {
+      "maxLength": 120,
+      "minLength": 1,
+      "type": "string"
+    },
+    "existing_sources": {
+      "items": {
+        "enum": [
+          "nevo",
+          "usda_fdc",
+          "system_food"
+        ],
+        "type": "string"
+      },
+      "maxItems": 3,
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "food_family": {
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "form": {
+      "enum": [
+        "unspecified",
+        "whole",
+        "fresh",
+        "frozen",
+        "dried",
+        "powder",
+        "liquid"
+      ],
+      "type": "string"
+    },
+    "job_id": {
+      "maxLength": 100,
+      "minLength": 1,
+      "pattern": "^food-[a-z0-9-]+-r[0-9]{4}$",
+      "type": "string"
+    },
+    "known_nutrients": {
+      "additionalProperties": false,
+      "properties": {
+        "calcium": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "calcium"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "carbs": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "available_carbohydrate"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "fat": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_lipid"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "fiber": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_dietary_fibre"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "folate": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "folate"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "iron": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "iron"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "kcal": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "food_energy"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "kcal_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "magnesium": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "magnesium"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "omega_3": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_omega_3"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "potassium": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "potassium"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "protein": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_protein"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "saturated_fat": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_saturated_fatty_acids"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "selenium": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "selenium"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "sodium": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "sodium_not_salt"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "sugar": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_mono_disaccharides"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "g_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "vitamin_a": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "vitamin_a"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "vitamin_b1": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "thiamin"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "vitamin_b12": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "cobalamin"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "vitamin_b2": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "riboflavin"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "vitamin_b6": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_vitamin_b6"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "vitamin_c": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "total_ascorbic_acid"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "vitamin_d": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "vitamin_d"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "vitamin_e": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "vitamin_e"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "vitamin_k": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "vitamin_k"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "ug_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "zinc": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "definition": {
+              "const": "zinc"
+            },
+            "method": {
+              "maxLength": 40,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_definition": {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_label": {
+              "maxLength": 160,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source_scope": {
+              "enum": [
+                "food_value",
+                "component",
+                "proxy"
+              ],
+              "type": "string"
+            },
+            "unit": {
+              "const": "mg_per_100g"
+            },
+            "value": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "value",
+            "unit",
+            "definition",
+            "method",
+            "confidence"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "language": {
+      "enum": [
+        "en",
+        "nl"
+      ],
+      "type": "string"
+    },
+    "missing_nutrients": {
+      "items": {
+        "enum": [
+          "kcal",
+          "carbs",
+          "protein",
+          "fat",
+          "fiber",
+          "sugar",
+          "saturated_fat",
+          "sodium",
+          "vitamin_a",
+          "vitamin_b1",
+          "vitamin_b2",
+          "vitamin_b6",
+          "vitamin_b12",
+          "vitamin_c",
+          "vitamin_d",
+          "vitamin_e",
+          "vitamin_k",
+          "folate",
+          "calcium",
+          "iron",
+          "magnesium",
+          "potassium",
+          "zinc",
+          "selenium",
+          "omega_3"
+        ],
+        "type": "string"
+      },
+      "maxItems": 25,
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "nutrient_definition_version": {
+      "const": "common-food-v2"
+    },
+    "policy_version": {
+      "const": "food-research-v2"
+    },
+    "preparation": {
+      "enum": [
+        "unspecified",
+        "raw",
+        "cooked",
+        "smoked",
+        "canned",
+        "prepared"
+      ],
+      "type": "string"
+    },
+    "priority": {
+      "maximum": 100,
+      "minimum": 0,
+      "multipleOf": 10,
+      "type": "number"
+    },
+    "request_hash": {
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "request_hash_version": {
+      "const": "jcs-sha256-v1"
+    },
+    "requested_nutrients": {
+      "items": {
+        "enum": [
+          "kcal",
+          "carbs",
+          "protein",
+          "fat",
+          "fiber",
+          "sugar",
+          "saturated_fat",
+          "sodium",
+          "vitamin_a",
+          "vitamin_b1",
+          "vitamin_b2",
+          "vitamin_b6",
+          "vitamin_b12",
+          "vitamin_c",
+          "vitamin_d",
+          "vitamin_e",
+          "vitamin_k",
+          "folate",
+          "calcium",
+          "iron",
+          "magnesium",
+          "potassium",
+          "zinc",
+          "selenium",
+          "omega_3"
+        ],
+        "type": "string"
+      },
+      "maxItems": 25,
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "research_reasons": {
+      "items": {
+        "enum": [
+          "incomplete_micronutrients",
+          "low_confidence_category",
+          "unknown_family"
+        ],
+        "type": "string"
+      },
+      "maxItems": 3,
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "research_version": {
+      "maximum": 9999,
+      "minimum": 1,
+      "multipleOf": 1,
+      "type": "number"
+    },
+    "schema_version": {
+      "const": "2"
+    }
+  },
+  "required": [
+    "schema_version",
+    "canonical_food_id",
+    "canonical_name",
+    "aliases",
+    "language",
+    "food_family",
+    "preparation",
+    "form",
+    "job_id",
+    "request_hash",
+    "research_version",
+    "known_nutrients",
+    "missing_nutrients",
+    "requested_nutrients",
+    "existing_sources",
+    "research_reasons",
+    "priority",
+    "policy_version",
+    "nutrient_definition_version",
+    "request_hash_version"
+  ],
+  "type": "object"
+}
