@@ -79,11 +79,11 @@
   "result_hash": null,
   "schema_version": "3",
   "state": {
-    "claim_id": null,
-    "claimed_at": null,
+    "claim_id": "f1d446245630486fba8ee3a382ec86bc",
+    "claimed_at": "2026-10-02T16:12:25Z",
     "completed_at": null,
-    "lease_until": null,
+    "lease_until": "2026-10-02T18:12:25Z",
     "previous_claim": null,
-    "status": "pending"
+    "status": "in_progress"
   }
 }
