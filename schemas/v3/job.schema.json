@@ -395,6 +395,16 @@
         }
       ]
     },
+    "result_hash_version": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "const": "jcs-sha256-v1"
+        }
+      ]
+    },
     "schema_version": {
       "const": "3"
     },

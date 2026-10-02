@@ -94,38 +94,43 @@ compare the original request. Never take over a terminal state after rereading.
 
 Finish only with current in_progress and your exact claim_id. Validate the
 result under the request's V1/V2 completed schema, identity, request hash,
-requested nutrient scope and evidence rules. One SHA-guarded PUT sets result,
-result_hash and completed/failed state together. Failure has the existing
+requested nutrient scope and evidence rules. One SHA-guarded PUT sets result, result_hash_version, result_hash and completed/failed state together. Failure has the existing
 bounded failure_code and empty nutrients. Never fabricate failure to meet time.
 A timeout followed by your identical canonical result in a terminal envelope
 is success; any different result conflicts. Never modify terminal output.
 
 ## Result retention, review and archive (Life Hub backend only)
 
-`result_hash` remains SHA256 of the **legacy Python canonical bytes** of the result
-object alone (`sort_keys=True, ensure_ascii=True, indent=2, allow_nan=False`,
-plus one LF, UTF-8). It does NOT use JCS. It excludes
-the entire request, state, envelope formatting, paths and archive metadata.
-Life Hub retains those exact canonical result bytes both locally and in its
-immutable result storage. Existing per-nutrient review/import and operator
-hashbinding operate on those bytes. Legacy results keep their original bytes
-and byte hash without reserialization. Reviews and nutrition policy stay local.
+V3 terminal envelopes support two result-hash policies for compatibility:
 
-Consequently changing a result number from `12.0` to `12` after hashing CAN
-invalidate result_hash. Compute that hash from the final serialized result as
-Life Hub will parse it, using this existing result policy. Do not copy
-request_hash_version into the V1/V2 result. Once terminal, do not reserialize
-result/envelope bytes. This deliberate audit boundary is independent of the
-normalization-tolerant request identity; review/operator bindings never change.
+* **New terminal writes:** set `result_hash_version: "jcs-sha256-v1"` and compute
+  `result_hash` as SHA256 of RFC 8785 / JCS UTF-8 bytes of the parsed `result`
+  object. Formatting, key order and equivalent JSON number spellings such as
+  `12.0` versus `12` therefore do not change the hash.
+* **Historical terminal envelopes:** when `result_hash_version` is absent, keep
+  the frozen legacy Python canonical-result hash
+  (`sort_keys=True, ensure_ascii=True, indent=2, allow_nan=False` plus LF).
+  Existing terminal files are never rewritten.
+
+The hash covers the result object alone, not request/state/envelope formatting.
+The worker may therefore serialize a new JCS-hashed terminal envelope normally;
+it does **not** need to copy a large helper-produced byte string verbatim.
+Before finishing it still validates the result schema, immutable request identity,
+claim ownership and requested nutrient scope. After writing, re-read the file and
+recompute the selected result hash. Any semantic result change still conflicts.
+
+Life Hub may canonicalize the validated result into its own immutable local result
+bytes for existing review/import hashbinding. That local retained-byte hash is an
+internal audit identity and is independent of the V3 transport `result_hash`.
+Legacy results keep their historical local bytes and hashes unchanged.
 
 Life Hub reads statuses from active pending/*.json; pending/in_progress map to
 the logical remote states, and completed/failed trigger validation and pull.
 Only after local retention and policy processing/staging has succeeded does it
 persist archive retry intent and the hash of the ENTIRE terminal envelope.
 It then uses its backend Git Data API token to delete the pending path and add
-the exact envelope bytes to completed/ or failed/ in ONE non-force atomic commit
-with the observed head as parent. No archive metadata is added to the envelope.
-Archive commits cannot overwrite concurrent changes to the observed branch.
+the exact observed terminal envelope bytes to completed/ or failed/ in one
+non-force atomic commit with the observed head as parent.
 
 Archive failure never rolls back local evidence/reviews/imports. Subsequent cycles
 include archive_pending jobs even when their local status is terminal. Repeated
