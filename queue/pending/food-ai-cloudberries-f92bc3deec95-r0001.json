@@ -75,15 +75,654 @@
     "research_version": 1,
     "schema_version": "2"
   },
-  "result": null,
-  "result_hash": null,
+  "result": {
+    "schema_version": "2",
+    "job_id": "food-ai-cloudberries-f92bc3deec95-r0001",
+    "canonical_food_id": "ai-cloudberries-f92bc3deec95",
+    "research_version": 1,
+    "request_hash": "061d7e2862519e78341c390f47bf6e3beb70340dc5703f8b71f2034b61b20525",
+    "status": "completed",
+    "nutrients": {
+      "kcal": {
+        "value": 46,
+        "unit": "kcal_per_100g",
+        "definition": "food_energy",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian national table reports 46 kcal/100 g.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 46,
+          "high": 46
+        },
+        "review_needed": false,
+        "source_label": "Energy",
+        "source_definition": "food energy",
+        "source_scope": "food_value"
+      },
+      "carbs": {
+        "value": 4.4,
+        "unit": "g_per_100g",
+        "definition": "available_carbohydrate",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 4.4 g/100 g available carbohydrate, calculated from sugars plus starch.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 4.4,
+          "high": 4.4
+        },
+        "review_needed": false,
+        "source_label": "Carbohydrate",
+        "source_definition": "available carbohydrate",
+        "source_scope": "food_value"
+      },
+      "protein": {
+        "value": 1.6,
+        "unit": "g_per_100g",
+        "definition": "total_protein",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 1.6 g/100 g protein.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 1.6,
+          "high": 1.6
+        },
+        "review_needed": false,
+        "source_label": "Protein",
+        "source_definition": "total protein",
+        "source_scope": "food_value"
+      },
+      "fat": {
+        "value": 1.1,
+        "unit": "g_per_100g",
+        "definition": "total_lipid",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 1.1 g/100 g total fat.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 1.1,
+          "high": 1.1
+        },
+        "review_needed": false,
+        "source_label": "Fat",
+        "source_definition": "total fat",
+        "source_scope": "food_value"
+      },
+      "fiber": {
+        "value": 6,
+        "unit": "g_per_100g",
+        "definition": "total_dietary_fibre",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 6.0 g/100 g dietary fibre.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 6,
+          "high": 6
+        },
+        "review_needed": false,
+        "source_label": "Dietary fibre",
+        "source_definition": "total dietary fibre",
+        "source_scope": "food_value"
+      },
+      "sugar": {
+        "value": 4.4,
+        "unit": "g_per_100g",
+        "definition": "total_mono_disaccharides",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 4.4 g/100 g total sugar.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 4.4,
+          "high": 4.4
+        },
+        "review_needed": false,
+        "source_label": "Sugar, total",
+        "source_definition": "sum of mono- and disaccharides",
+        "source_scope": "food_value"
+      },
+      "saturated_fat": {
+        "value": 0.1,
+        "unit": "g_per_100g",
+        "definition": "total_saturated_fatty_acids",
+        "method": "openai_research_estimate",
+        "confidence": 0.8,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 0.1 g/100 g saturated fatty acids.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 0.1,
+          "high": 0.1
+        },
+        "review_needed": true,
+        "source_label": "Saturated fatty acids",
+        "source_definition": "total saturated fatty acids",
+        "source_scope": "food_value"
+      },
+      "sodium": {
+        "value": 0.001,
+        "unit": "g_per_100g",
+        "definition": "sodium_not_salt",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 1 mg sodium/100 g, converted to 0.001 g/100 g.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 0.001,
+          "high": 0.001
+        },
+        "review_needed": false,
+        "source_label": "Sodium",
+        "source_definition": "sodium, not salt",
+        "source_scope": "food_value"
+      },
+      "vitamin_a": {
+        "value": 12,
+        "unit": "ug_per_100g",
+        "definition": "vitamin_a",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 12 µg RAE/100 g.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 12,
+          "high": 12
+        },
+        "review_needed": false,
+        "source_label": "Vitamin A (RAE)",
+        "source_definition": "retinol activity equivalents (RAE)",
+        "source_scope": "food_value"
+      },
+      "vitamin_b1": {
+        "value": 0.02,
+        "unit": "mg_per_100g",
+        "definition": "thiamin",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 0.02 mg/100 g thiamin.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 0.02,
+          "high": 0.02
+        },
+        "review_needed": false,
+        "source_label": "Vitamin B1 (thiamin)",
+        "source_definition": "thiamin",
+        "source_scope": "food_value"
+      },
+      "vitamin_b2": {
+        "value": 0.02,
+        "unit": "mg_per_100g",
+        "definition": "riboflavin",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 0.02 mg/100 g riboflavin.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 0.02,
+          "high": 0.02
+        },
+        "review_needed": false,
+        "source_label": "Vitamin B2 (riboflavin)",
+        "source_definition": "riboflavin",
+        "source_scope": "food_value"
+      },
+      "vitamin_b6": {
+        "value": 0.07,
+        "unit": "mg_per_100g",
+        "definition": "total_vitamin_b6",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 0.07 mg/100 g vitamin B6.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 0.07,
+          "high": 0.07
+        },
+        "review_needed": false,
+        "source_label": "Vitamin B6",
+        "source_definition": "pyridoxine / vitamin B6",
+        "source_scope": "food_value"
+      },
+      "vitamin_b12": {
+        "value": 0,
+        "unit": "ug_per_100g",
+        "definition": "cobalamin",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table explicitly records vitamin B12 as a naturally occurring logical zero.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 0,
+          "high": 0
+        },
+        "review_needed": false,
+        "source_label": "Vitamin B12",
+        "source_definition": "cobalamin",
+        "source_scope": "food_value"
+      },
+      "vitamin_c": {
+        "value": 95,
+        "unit": "mg_per_100g",
+        "definition": "total_ascorbic_acid",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 95 mg/100 g vitamin C.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 95,
+          "high": 95
+        },
+        "review_needed": false,
+        "source_label": "Vitamin C (ascorbic acid)",
+        "source_definition": "ascorbic acid",
+        "source_scope": "food_value"
+      },
+      "vitamin_d": {
+        "value": 0,
+        "unit": "ug_per_100g",
+        "definition": "vitamin_d",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table explicitly records vitamin D as a naturally occurring logical zero.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 0,
+          "high": 0
+        },
+        "review_needed": false,
+        "source_label": "Vitamin D",
+        "source_definition": "vitamin D",
+        "source_scope": "food_value"
+      },
+      "vitamin_e": {
+        "value": 3.2,
+        "unit": "mg_per_100g",
+        "definition": "vitamin_e",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 3.2 mg-ATE/100 g vitamin E.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 3.2,
+          "high": 3.2
+        },
+        "review_needed": false,
+        "source_label": "Vitamin E",
+        "source_definition": "alpha-tocopherol equivalents",
+        "source_scope": "food_value"
+      },
+      "folate": {
+        "value": 49,
+        "unit": "ug_per_100g",
+        "definition": "folate",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 49 µg/100 g folate.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 49,
+          "high": 49
+        },
+        "review_needed": false,
+        "source_label": "Vitamin B9 (folate)",
+        "source_definition": "folate, total",
+        "source_scope": "food_value"
+      },
+      "calcium": {
+        "value": 17,
+        "unit": "mg_per_100g",
+        "definition": "calcium",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 17 mg/100 g calcium.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 17,
+          "high": 17
+        },
+        "review_needed": false,
+        "source_label": "Calcium",
+        "source_definition": "calcium",
+        "source_scope": "food_value"
+      },
+      "iron": {
+        "value": 0.5,
+        "unit": "mg_per_100g",
+        "definition": "iron",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 0.5 mg/100 g iron.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 0.5,
+          "high": 0.5
+        },
+        "review_needed": false,
+        "source_label": "Iron",
+        "source_definition": "iron",
+        "source_scope": "food_value"
+      },
+      "magnesium": {
+        "value": 30,
+        "unit": "mg_per_100g",
+        "definition": "magnesium",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 30 mg/100 g magnesium.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 30,
+          "high": 30
+        },
+        "review_needed": false,
+        "source_label": "Magnesium",
+        "source_definition": "magnesium",
+        "source_scope": "food_value"
+      },
+      "potassium": {
+        "value": 218,
+        "unit": "mg_per_100g",
+        "definition": "potassium",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 218 mg/100 g potassium.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 218,
+          "high": 218
+        },
+        "review_needed": false,
+        "source_label": "Potassium",
+        "source_definition": "potassium",
+        "source_scope": "food_value"
+      },
+      "zinc": {
+        "value": 0.6,
+        "unit": "mg_per_100g",
+        "definition": "zinc",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 0.6 mg/100 g zinc.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 0.6,
+          "high": 0.6
+        },
+        "review_needed": false,
+        "source_label": "Zinc",
+        "source_definition": "zinc",
+        "source_scope": "food_value"
+      },
+      "selenium": {
+        "value": 0,
+        "unit": "ug_per_100g",
+        "definition": "selenium",
+        "method": "openai_research_estimate",
+        "confidence": 0.75,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 0 µg/100 g selenium.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 0,
+          "high": 0
+        },
+        "review_needed": true,
+        "source_label": "Selenium",
+        "source_definition": "selenium",
+        "source_scope": "food_value"
+      },
+      "omega_3": {
+        "value": 0.3,
+        "unit": "g_per_100g",
+        "definition": "total_omega_3",
+        "method": "openai_research_estimate",
+        "confidence": 0.9,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table reports 0.3 g/100 g total omega-3.",
+        "references": [
+          {
+            "title": "Cloudberries, raw — Norwegian Food Composition Table",
+            "url": "https://www.matvaretabellen.no/en/cloudberries-raw/",
+            "accessed_on": "2026-10-02",
+            "locator": "Per 100 g; Rubus chamaemorus L.; raw, no heat treatment"
+          }
+        ],
+        "range": {
+          "low": 0.3,
+          "high": 0.3
+        },
+        "review_needed": false,
+        "source_label": "Omega-3",
+        "source_definition": "total cis n-3 polyunsaturated fatty acids",
+        "source_scope": "food_value"
+      },
+      "vitamin_k": {
+        "value": 9,
+        "unit": "ug_per_100g",
+        "definition": "vitamin_k",
+        "method": "openai_research_estimate",
+        "confidence": 0.7,
+        "evidence_kind": "researched",
+        "source_notes": "Norwegian table does not list vitamin K; Fineli reports 9 µg/100 g total vitamin K.",
+        "references": [
+          {
+            "title": "Cloudberry — Fineli Finnish Food Composition Database",
+            "url": "https://fineli.fi/fineli/en/elintarvikkeet?component=2331&foodType=ANY&ingredientClass=BERRY&portionSize=100&portionUnit=G&sortByColumn=name&sortOrder=asc",
+            "accessed_on": "2026-10-02",
+            "locator": "Cloudberry; per 100 g; vitamin K total"
+          }
+        ],
+        "range": {
+          "low": 9,
+          "high": 9
+        },
+        "review_needed": true,
+        "source_label": "Vitamin K",
+        "source_definition": "vitamin K, total",
+        "source_scope": "food_value"
+      }
+    },
+    "review_needed": true,
+    "failure_code": "none",
+    "researched_on": "2026-10-02",
+    "nutrient_definition_version": "common-food-v2"
+  },
+  "result_hash": "de230a66b45d9c6fb57ebfda07930b8d9ef922fa4980f4a570901d8bd5d94d6e",
   "schema_version": "3",
   "state": {
+    "status": "completed",
     "claim_id": "f1d446245630486fba8ee3a382ec86bc",
     "claimed_at": "2026-10-02T16:12:25Z",
-    "completed_at": null,
-    "lease_until": "2026-10-02T18:12:25Z",
-    "previous_claim": null,
-    "status": "in_progress"
-  }
+    "lease_until": null,
+    "completed_at": "2026-10-02T17:12:45Z",
+    "previous_claim": null
+  },
+  "result_hash_version": "jcs-sha256-v1"
 }
