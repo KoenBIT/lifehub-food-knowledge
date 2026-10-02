@@ -1,0 +1,284 @@
+{
+  "request": {
+    "aliases": [],
+    "canonical_food_id": "ai-knackebrod-volkoren-9fcf64cbe567",
+    "canonical_name": "knackebrod volkoren",
+    "existing_sources": [
+      "nevo"
+    ],
+    "food_family": "unknown",
+    "form": "unspecified",
+    "job_id": "food-ai-knackebrod-volkoren-9fcf64cbe567-r0001",
+    "known_nutrients": {
+      "calcium": {
+        "confidence": 1.0,
+        "definition": "calcium",
+        "method": "database_exact",
+        "source_definition": "calcium",
+        "source_label": "calcium",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 40.0
+      },
+      "carbs": {
+        "confidence": 1.0,
+        "definition": "available_carbohydrate",
+        "method": "database_exact",
+        "source_definition": "available_carbohydrate",
+        "source_label": "carbs",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 64.0
+      },
+      "fat": {
+        "confidence": 1.0,
+        "definition": "total_lipid",
+        "method": "database_exact",
+        "source_definition": "total_lipid",
+        "source_label": "fat",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 4.0
+      },
+      "fiber": {
+        "confidence": 1.0,
+        "definition": "total_dietary_fibre",
+        "method": "database_exact",
+        "source_definition": "total_dietary_fibre",
+        "source_label": "fiber",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 13.7
+      },
+      "folate": {
+        "confidence": 1.0,
+        "definition": "folate",
+        "method": "database_exact",
+        "source_definition": "dietary_folate_equivalents",
+        "source_label": "folate",
+        "source_scope": "food_value",
+        "unit": "ug_per_100g",
+        "value": 31.0
+      },
+      "iron": {
+        "confidence": 1.0,
+        "definition": "iron",
+        "method": "database_exact",
+        "source_definition": "iron",
+        "source_label": "iron",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 3.0
+      },
+      "kcal": {
+        "confidence": 1.0,
+        "definition": "food_energy",
+        "method": "database_exact",
+        "source_definition": "food_energy",
+        "source_label": "kcal",
+        "source_scope": "food_value",
+        "unit": "kcal_per_100g",
+        "value": 363.0
+      },
+      "magnesium": {
+        "confidence": 1.0,
+        "definition": "magnesium",
+        "method": "database_exact",
+        "source_definition": "magnesium",
+        "source_label": "magnesium",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 80.0
+      },
+      "omega_3": {
+        "confidence": 1.0,
+        "definition": "total_omega_3",
+        "method": "database_exact",
+        "source_definition": "total_cis_n3_pufa",
+        "source_label": "Total omega-3",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 0.1
+      },
+      "potassium": {
+        "confidence": 1.0,
+        "definition": "potassium",
+        "method": "database_exact",
+        "source_definition": "potassium",
+        "source_label": "potassium",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 400.0
+      },
+      "protein": {
+        "confidence": 1.0,
+        "definition": "total_protein",
+        "method": "database_exact",
+        "source_definition": "total_protein",
+        "source_label": "protein",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 10.9
+      },
+      "saturated_fat": {
+        "confidence": 1.0,
+        "definition": "total_saturated_fatty_acids",
+        "method": "database_exact",
+        "source_definition": "total_saturated_fatty_acids",
+        "source_label": "saturated fat",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 0.6
+      },
+      "selenium": {
+        "confidence": 1.0,
+        "definition": "selenium",
+        "method": "database_exact",
+        "source_definition": "selenium",
+        "source_label": "selenium",
+        "source_scope": "food_value",
+        "unit": "ug_per_100g",
+        "value": 2.0
+      },
+      "sodium": {
+        "confidence": 1.0,
+        "definition": "sodium_not_salt",
+        "method": "database_exact",
+        "source_definition": "sodium_not_salt",
+        "source_label": "sodium",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 0.389
+      },
+      "sugar": {
+        "confidence": 1.0,
+        "definition": "total_mono_disaccharides",
+        "method": "database_exact",
+        "source_definition": "total_mono_disaccharides",
+        "source_label": "sugar",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 3.1
+      },
+      "vitamin_a": {
+        "confidence": 1.0,
+        "definition": "vitamin_a",
+        "method": "database_exact",
+        "source_definition": "retinol_activity_equivalents",
+        "source_label": "Vitamin A",
+        "source_scope": "food_value",
+        "unit": "ug_per_100g",
+        "value": 0.0
+      },
+      "vitamin_b1": {
+        "confidence": 1.0,
+        "definition": "thiamin",
+        "method": "database_exact",
+        "source_definition": "thiamin",
+        "source_label": "Vitamin B1",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 0.22
+      },
+      "vitamin_b12": {
+        "confidence": 1.0,
+        "definition": "cobalamin",
+        "method": "database_exact",
+        "source_definition": "cobalamin",
+        "source_label": "Vitamin B12",
+        "source_scope": "food_value",
+        "unit": "ug_per_100g",
+        "value": 0.0
+      },
+      "vitamin_b2": {
+        "confidence": 1.0,
+        "definition": "riboflavin",
+        "method": "database_exact",
+        "source_definition": "riboflavin",
+        "source_label": "Vitamin B2",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 0.1
+      },
+      "vitamin_b6": {
+        "confidence": 1.0,
+        "definition": "total_vitamin_b6",
+        "method": "database_exact",
+        "source_definition": "total_vitamin_b6",
+        "source_label": "Vitamin B6",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 0.26
+      },
+      "vitamin_c": {
+        "confidence": 1.0,
+        "definition": "total_ascorbic_acid",
+        "method": "database_exact",
+        "source_definition": "total_ascorbic_acid",
+        "source_label": "Vitamin C",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 0.0
+      },
+      "vitamin_d": {
+        "confidence": 1.0,
+        "definition": "vitamin_d",
+        "method": "database_exact",
+        "source_definition": "d2_plus_d3_plus_25ohd3_unweighted",
+        "source_label": "Vitamin D",
+        "source_scope": "food_value",
+        "unit": "ug_per_100g",
+        "value": 0.0
+      },
+      "vitamin_e": {
+        "confidence": 1.0,
+        "definition": "vitamin_e",
+        "method": "database_exact",
+        "source_definition": "nevo_alpha_tocopherol_equivalents",
+        "source_label": "Vitamin E",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 0.5
+      },
+      "zinc": {
+        "confidence": 1.0,
+        "definition": "zinc",
+        "method": "database_exact",
+        "source_definition": "zinc",
+        "source_label": "zinc",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 2.5
+      }
+    },
+    "language": "en",
+    "missing_nutrients": [
+      "vitamin_k"
+    ],
+    "nutrient_definition_version": "common-food-v2",
+    "policy_version": "food-research-v2",
+    "preparation": "unspecified",
+    "priority": 10,
+    "request_hash": "fc1a612ddcf1782dc9cb6bd24dc7acd9a99c6aa9981d051af63a54e1e5603936",
+    "request_hash_version": "jcs-sha256-v1",
+    "requested_nutrients": [
+      "vitamin_k"
+    ],
+    "research_reasons": [
+      "unknown_family"
+    ],
+    "research_version": 1,
+    "schema_version": "2"
+  },
+  "result": null,
+  "result_hash": null,
+  "schema_version": "3",
+  "state": {
+    "claim_id": null,
+    "claimed_at": null,
+    "completed_at": null,
+    "lease_until": null,
+    "previous_claim": null,
+    "status": "pending"
+  }
+}
