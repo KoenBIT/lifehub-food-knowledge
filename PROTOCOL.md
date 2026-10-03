@@ -189,6 +189,10 @@ claiming. Requests with `taxonomy_version: "food-classification-v1"` use
 fields to the existing V3/JCS protocol, without changing V2 nutrient evidence.
 Old requests without taxonomy_version remain historical, immutable snapshots.
 Unknown taxonomy versions or enum values must be rejected, never normalized.
+For rolling compatibility, external workers omit new classification-v1 feedback
+on requests without taxonomy_version: those requests may still have an old backend
+reader. Finish their nutrition result normally. A request declaring the supported
+taxonomy_version is the signal that its producer understands three-field feedback.
 
 Family is the broad food category; canonical_name identifies the concrete food.
 Preparation is processing/state; form is physical/product shape. Labels are for
