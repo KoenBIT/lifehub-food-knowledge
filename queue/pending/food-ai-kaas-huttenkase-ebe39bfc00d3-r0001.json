@@ -1,0 +1,278 @@
+{
+  "identity_review": null,
+  "request": {
+    "aliases": [],
+    "canonical_food_id": "ai-kaas-huttenkase-ebe39bfc00d3",
+    "canonical_name": "kaas huttenkase",
+    "existing_sources": [
+      "nevo"
+    ],
+    "food_family": "unknown",
+    "form": "unknown",
+    "job_id": "food-ai-kaas-huttenkase-ebe39bfc00d3-r0001",
+    "known_nutrients": {
+      "calcium": {
+        "confidence": 1.0,
+        "definition": "calcium",
+        "method": "database_exact",
+        "source_definition": "calcium",
+        "source_label": "calcium",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 75.0
+      },
+      "carbs": {
+        "confidence": 1.0,
+        "definition": "available_carbohydrate",
+        "method": "database_exact",
+        "source_definition": "available_carbohydrate",
+        "source_label": "carbs",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 2.3
+      },
+      "fat": {
+        "confidence": 1.0,
+        "definition": "total_lipid",
+        "method": "database_exact",
+        "source_definition": "total_lipid",
+        "source_label": "fat",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 3.9
+      },
+      "fiber": {
+        "confidence": 1.0,
+        "definition": "total_dietary_fibre",
+        "method": "database_exact",
+        "source_definition": "total_dietary_fibre",
+        "source_label": "fiber",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 0.0
+      },
+      "folate": {
+        "confidence": 1.0,
+        "definition": "folate",
+        "method": "database_exact",
+        "source_definition": "dietary_folate_equivalents",
+        "source_label": "Vitamin B9 (folate)",
+        "source_scope": "food_value",
+        "unit": "ug_per_100g",
+        "value": 14.0
+      },
+      "iron": {
+        "confidence": 1.0,
+        "definition": "iron",
+        "method": "database_exact",
+        "source_definition": "iron",
+        "source_label": "iron",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 0.3
+      },
+      "kcal": {
+        "confidence": 1.0,
+        "definition": "food_energy",
+        "method": "database_exact",
+        "source_definition": "food_energy",
+        "source_label": "kcal",
+        "source_scope": "food_value",
+        "unit": "kcal_per_100g",
+        "value": 92.0
+      },
+      "magnesium": {
+        "confidence": 1.0,
+        "definition": "magnesium",
+        "method": "database_exact",
+        "source_definition": "magnesium",
+        "source_label": "magnesium",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 7.0
+      },
+      "omega_3": {
+        "confidence": 1.0,
+        "definition": "total_omega_3",
+        "method": "database_exact",
+        "source_definition": "total_cis_n3_pufa",
+        "source_label": "Total omega-3",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 0.0
+      },
+      "potassium": {
+        "confidence": 1.0,
+        "definition": "potassium",
+        "method": "database_exact",
+        "source_definition": "potassium",
+        "source_label": "potassium",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 85.0
+      },
+      "protein": {
+        "confidence": 1.0,
+        "definition": "total_protein",
+        "method": "database_exact",
+        "source_definition": "total_protein",
+        "source_label": "protein",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 11.2
+      },
+      "saturated_fat": {
+        "confidence": 1.0,
+        "definition": "total_saturated_fatty_acids",
+        "method": "database_exact",
+        "source_definition": "total_saturated_fatty_acids",
+        "source_label": "saturated fat",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 2.5
+      },
+      "sodium": {
+        "confidence": 1.0,
+        "definition": "sodium_not_salt",
+        "method": "database_exact",
+        "source_definition": "sodium_not_salt",
+        "source_label": "sodium",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 0.37
+      },
+      "sugar": {
+        "confidence": 1.0,
+        "definition": "total_mono_disaccharides",
+        "method": "database_exact",
+        "source_definition": "total_mono_disaccharides",
+        "source_label": "Sugar, total",
+        "source_scope": "food_value",
+        "unit": "g_per_100g",
+        "value": 2.3
+      },
+      "vitamin_a": {
+        "confidence": 1.0,
+        "definition": "vitamin_a",
+        "method": "database_exact",
+        "source_definition": "retinol_activity_equivalents",
+        "source_label": "Vitamin A",
+        "source_scope": "food_value",
+        "unit": "ug_per_100g",
+        "value": 47.0
+      },
+      "vitamin_b1": {
+        "confidence": 1.0,
+        "definition": "thiamin",
+        "method": "database_exact",
+        "source_definition": "thiamin",
+        "source_label": "Vitamin B1",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 0.02
+      },
+      "vitamin_b12": {
+        "confidence": 1.0,
+        "definition": "cobalamin",
+        "method": "database_exact",
+        "source_definition": "cobalamin",
+        "source_label": "Vitamin B12",
+        "source_scope": "food_value",
+        "unit": "ug_per_100g",
+        "value": 0.76
+      },
+      "vitamin_b2": {
+        "confidence": 1.0,
+        "definition": "riboflavin",
+        "method": "database_exact",
+        "source_definition": "riboflavin",
+        "source_label": "Vitamin B2",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 0.25
+      },
+      "vitamin_b6": {
+        "confidence": 1.0,
+        "definition": "total_vitamin_b6",
+        "method": "database_exact",
+        "source_definition": "total_vitamin_b6",
+        "source_label": "Vitamin B6",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 0.09
+      },
+      "vitamin_c": {
+        "confidence": 1.0,
+        "definition": "total_ascorbic_acid",
+        "method": "database_exact",
+        "source_definition": "total_ascorbic_acid",
+        "source_label": "Vitamin C (ascorbic acid)",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 0.0
+      },
+      "vitamin_d": {
+        "confidence": 1.0,
+        "definition": "vitamin_d",
+        "method": "database_exact",
+        "source_definition": "d2_plus_d3_plus_25ohd3_unweighted",
+        "source_label": "Vitamin D",
+        "source_scope": "food_value",
+        "unit": "ug_per_100g",
+        "value": 0.1
+      },
+      "vitamin_k": {
+        "confidence": 1.0,
+        "definition": "vitamin_k",
+        "method": "database_exact",
+        "source_definition": "k1_plus_k2_mk4_to_mk10",
+        "source_label": "Vitamin K",
+        "source_scope": "food_value",
+        "unit": "ug_per_100g",
+        "value": 0.0
+      },
+      "zinc": {
+        "confidence": 1.0,
+        "definition": "zinc",
+        "method": "database_exact",
+        "source_definition": "zinc",
+        "source_label": "zinc",
+        "source_scope": "food_value",
+        "unit": "mg_per_100g",
+        "value": 0.23
+      }
+    },
+    "language": "en",
+    "missing_nutrients": [
+      "vitamin_e",
+      "selenium"
+    ],
+    "nutrient_definition_version": "common-food-v2",
+    "policy_version": "food-research-v2",
+    "preparation": "unknown",
+    "priority": 10,
+    "request_hash": "4e0f810ee035942bb9215f843da39799fb25828833584bbc0d243dec62467d3c",
+    "request_hash_version": "jcs-sha256-v1",
+    "requested_nutrients": [
+      "vitamin_e",
+      "selenium"
+    ],
+    "research_reasons": [
+      "unknown_family"
+    ],
+    "research_version": 1,
+    "schema_version": "2",
+    "taxonomy_version": "food-classification-v1"
+  },
+  "result": null,
+  "result_hash": null,
+  "schema_version": "3",
+  "state": {
+    "claim_id": null,
+    "claimed_at": null,
+    "completed_at": null,
+    "lease_until": null,
+    "previous_claim": null,
+    "status": "pending"
+  }
+}
