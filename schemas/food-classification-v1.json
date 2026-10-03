@@ -1,0 +1,301 @@
+{
+  "family": [
+    {
+      "label": "Unknown",
+      "value": "unknown"
+    },
+    {
+      "label": "Vegetable",
+      "value": "vegetable"
+    },
+    {
+      "label": "Fruit",
+      "value": "fruit"
+    },
+    {
+      "label": "Grain",
+      "value": "grain"
+    },
+    {
+      "label": "Legume",
+      "value": "legume"
+    },
+    {
+      "label": "Nuts / seeds",
+      "value": "nut_seed"
+    },
+    {
+      "label": "Meat",
+      "value": "meat"
+    },
+    {
+      "label": "Poultry",
+      "value": "poultry"
+    },
+    {
+      "label": "Fish / seafood",
+      "value": "fish_seafood"
+    },
+    {
+      "label": "Dairy",
+      "value": "dairy"
+    },
+    {
+      "label": "Egg",
+      "value": "egg"
+    },
+    {
+      "label": "Fats / oils",
+      "value": "fat_oil"
+    },
+    {
+      "label": "Fungi",
+      "value": "fungi"
+    },
+    {
+      "label": "Herbs / spices",
+      "value": "herb_spice"
+    },
+    {
+      "label": "Sweet / confectionery",
+      "value": "sweet_confectionery"
+    },
+    {
+      "label": "Beverage",
+      "value": "beverage"
+    },
+    {
+      "label": "Condiments / sauces",
+      "value": "condiment_sauce"
+    },
+    {
+      "label": "Prepared / composite food",
+      "value": "prepared_composite"
+    },
+    {
+      "label": "Other",
+      "value": "other"
+    }
+  ],
+  "form": [
+    {
+      "label": "Unknown",
+      "value": "unknown"
+    },
+    {
+      "label": "Whole",
+      "value": "whole"
+    },
+    {
+      "label": "Pieces",
+      "value": "pieces"
+    },
+    {
+      "label": "Sliced",
+      "value": "sliced"
+    },
+    {
+      "label": "Diced",
+      "value": "diced"
+    },
+    {
+      "label": "Chopped",
+      "value": "chopped"
+    },
+    {
+      "label": "Grated",
+      "value": "grated"
+    },
+    {
+      "label": "Shredded",
+      "value": "shredded"
+    },
+    {
+      "label": "Minced",
+      "value": "minced"
+    },
+    {
+      "label": "Ground",
+      "value": "ground"
+    },
+    {
+      "label": "Mashed",
+      "value": "mashed"
+    },
+    {
+      "label": "Puree",
+      "value": "puree"
+    },
+    {
+      "label": "Flakes",
+      "value": "flakes"
+    },
+    {
+      "label": "Florets",
+      "value": "florets"
+    },
+    {
+      "label": "Fillet",
+      "value": "fillet"
+    },
+    {
+      "label": "Powder",
+      "value": "powder"
+    },
+    {
+      "label": "Flour",
+      "value": "flour"
+    },
+    {
+      "label": "Granules",
+      "value": "granules"
+    },
+    {
+      "label": "Sprinkles",
+      "value": "sprinkles"
+    },
+    {
+      "label": "Paste",
+      "value": "paste"
+    },
+    {
+      "label": "Spread",
+      "value": "spread"
+    },
+    {
+      "label": "Sauce",
+      "value": "sauce"
+    },
+    {
+      "label": "Liquid",
+      "value": "liquid"
+    },
+    {
+      "label": "Juice",
+      "value": "juice"
+    },
+    {
+      "label": "Syrup",
+      "value": "syrup"
+    },
+    {
+      "label": "Concentrate",
+      "value": "concentrate"
+    },
+    {
+      "label": "Bar",
+      "value": "bar"
+    },
+    {
+      "label": "Loaf",
+      "value": "loaf"
+    },
+    {
+      "label": "Patty",
+      "value": "patty"
+    },
+    {
+      "label": "Sausage",
+      "value": "sausage"
+    },
+    {
+      "label": "Other",
+      "value": "other"
+    }
+  ],
+  "preparation": [
+    {
+      "label": "Unknown",
+      "value": "unknown"
+    },
+    {
+      "label": "None",
+      "value": "none"
+    },
+    {
+      "label": "Raw",
+      "value": "raw"
+    },
+    {
+      "label": "Cooked",
+      "value": "cooked"
+    },
+    {
+      "label": "Boiled",
+      "value": "boiled"
+    },
+    {
+      "label": "Steamed",
+      "value": "steamed"
+    },
+    {
+      "label": "Baked",
+      "value": "baked"
+    },
+    {
+      "label": "Roasted",
+      "value": "roasted"
+    },
+    {
+      "label": "Grilled",
+      "value": "grilled"
+    },
+    {
+      "label": "Fried",
+      "value": "fried"
+    },
+    {
+      "label": "Deep fried",
+      "value": "deep_fried"
+    },
+    {
+      "label": "Sauteed",
+      "value": "sauteed"
+    },
+    {
+      "label": "Smoked",
+      "value": "smoked"
+    },
+    {
+      "label": "Dried",
+      "value": "dried"
+    },
+    {
+      "label": "Dehydrated",
+      "value": "dehydrated"
+    },
+    {
+      "label": "Fermented",
+      "value": "fermented"
+    },
+    {
+      "label": "Pickled",
+      "value": "pickled"
+    },
+    {
+      "label": "Canned",
+      "value": "canned"
+    },
+    {
+      "label": "Frozen",
+      "value": "frozen"
+    },
+    {
+      "label": "Pasteurized",
+      "value": "pasteurized"
+    },
+    {
+      "label": "Uht",
+      "value": "uht"
+    },
+    {
+      "label": "Reconstituted",
+      "value": "reconstituted"
+    },
+    {
+      "label": "Cured",
+      "value": "cured"
+    }
+  ],
+  "version": "food-classification-v1"
+}

@@ -4,6 +4,217 @@
     {
       "if": {
         "properties": {
+          "request": {
+            "required": [
+              "taxonomy_version"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "identity_review": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "canonical_food_id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "notes": {
+                    "maxLength": 300,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "reason": {
+                    "enum": [
+                      "consistent",
+                      "family_mismatch",
+                      "family_unconfirmed",
+                      "identity_ambiguous",
+                      "classification_mismatch",
+                      "classification_unconfirmed"
+                    ],
+                    "type": "string"
+                  },
+                  "request_family": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "request_form": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "request_hash": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-f0-9]{64}$",
+                    "type": "string"
+                  },
+                  "request_preparation": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "status": {
+                    "enum": [
+                      "confirmed",
+                      "suspect",
+                      "uncertain"
+                    ],
+                    "type": "string"
+                  },
+                  "suggested_family": {
+                    "anyOf": [
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "enum": [
+                          "unknown",
+                          "vegetable",
+                          "fruit",
+                          "grain",
+                          "legume",
+                          "nut_seed",
+                          "meat",
+                          "poultry",
+                          "fish_seafood",
+                          "dairy",
+                          "egg",
+                          "fat_oil",
+                          "fungi",
+                          "herb_spice",
+                          "sweet_confectionery",
+                          "beverage",
+                          "condiment_sauce",
+                          "prepared_composite",
+                          "other"
+                        ],
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "suggested_form": {
+                    "anyOf": [
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "enum": [
+                          "unknown",
+                          "whole",
+                          "pieces",
+                          "sliced",
+                          "diced",
+                          "chopped",
+                          "grated",
+                          "shredded",
+                          "minced",
+                          "ground",
+                          "mashed",
+                          "puree",
+                          "flakes",
+                          "florets",
+                          "fillet",
+                          "powder",
+                          "flour",
+                          "granules",
+                          "sprinkles",
+                          "paste",
+                          "spread",
+                          "sauce",
+                          "liquid",
+                          "juice",
+                          "syrup",
+                          "concentrate",
+                          "bar",
+                          "loaf",
+                          "patty",
+                          "sausage",
+                          "other"
+                        ],
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "suggested_preparation": {
+                    "anyOf": [
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "enum": [
+                          "unknown",
+                          "none",
+                          "raw",
+                          "cooked",
+                          "boiled",
+                          "steamed",
+                          "baked",
+                          "roasted",
+                          "grilled",
+                          "fried",
+                          "deep_fried",
+                          "sauteed",
+                          "smoked",
+                          "dried",
+                          "dehydrated",
+                          "fermented",
+                          "pickled",
+                          "canned",
+                          "frozen",
+                          "pasteurized",
+                          "uht",
+                          "reconstituted",
+                          "cured"
+                        ],
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "taxonomy_version": {
+                    "const": "food-classification-v1"
+                  }
+                },
+                "required": [
+                  "request_hash",
+                  "canonical_food_id",
+                  "status",
+                  "request_family",
+                  "suggested_family",
+                  "confidence",
+                  "reason",
+                  "notes",
+                  "taxonomy_version",
+                  "request_preparation",
+                  "suggested_preparation",
+                  "request_form",
+                  "suggested_form"
+                ],
+                "type": "object"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
           "state": {
             "properties": {
               "status": {
@@ -15,6 +226,9 @@
       },
       "then": {
         "properties": {
+          "identity_review": {
+            "type": "null"
+          },
           "result": {
             "type": "null"
           },
@@ -70,6 +284,9 @@
       },
       "then": {
         "properties": {
+          "identity_review": {
+            "type": "null"
+          },
           "result": {
             "type": "null"
           },
@@ -164,6 +381,315 @@
       },
       "then": {
         "properties": {
+          "identity_review": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "canonical_food_id": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                        "type": "string"
+                      },
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "notes": {
+                        "maxLength": 300,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "reason": {
+                        "enum": [
+                          "consistent",
+                          "family_mismatch",
+                          "family_unconfirmed",
+                          "identity_ambiguous"
+                        ],
+                        "type": "string"
+                      },
+                      "request_family": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                        "type": "string"
+                      },
+                      "request_hash": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-f0-9]{64}$",
+                        "type": "string"
+                      },
+                      "status": {
+                        "enum": [
+                          "confirmed",
+                          "suspect",
+                          "uncertain"
+                        ],
+                        "type": "string"
+                      },
+                      "suggested_family": {
+                        "anyOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "enum": [
+                              "unknown",
+                              "almond",
+                              "animal_food",
+                              "apple",
+                              "banana",
+                              "beef",
+                              "broccoli",
+                              "butter",
+                              "carrot",
+                              "chicken",
+                              "chickpea",
+                              "cod",
+                              "dairy",
+                              "egg",
+                              "fish",
+                              "fruit",
+                              "grain",
+                              "ham",
+                              "legume",
+                              "lentil",
+                              "meat",
+                              "milk",
+                              "nuts_seeds",
+                              "plant_food",
+                              "pork",
+                              "potato",
+                              "potato_starchy_vegetable",
+                              "poultry",
+                              "salmon",
+                              "sauerkraut",
+                              "semi_hard_cheese",
+                              "spinach",
+                              "vegetable",
+                              "white_bread",
+                              "wholegrain_bread",
+                              "yogurt"
+                            ],
+                            "type": "string"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "request_hash",
+                      "canonical_food_id",
+                      "status",
+                      "request_family",
+                      "suggested_family",
+                      "confidence",
+                      "reason",
+                      "notes"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "canonical_food_id": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                        "type": "string"
+                      },
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "notes": {
+                        "maxLength": 300,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "reason": {
+                        "enum": [
+                          "consistent",
+                          "family_mismatch",
+                          "family_unconfirmed",
+                          "identity_ambiguous",
+                          "classification_mismatch",
+                          "classification_unconfirmed"
+                        ],
+                        "type": "string"
+                      },
+                      "request_family": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "request_form": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "request_hash": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-f0-9]{64}$",
+                        "type": "string"
+                      },
+                      "request_preparation": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "status": {
+                        "enum": [
+                          "confirmed",
+                          "suspect",
+                          "uncertain"
+                        ],
+                        "type": "string"
+                      },
+                      "suggested_family": {
+                        "anyOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "enum": [
+                              "unknown",
+                              "vegetable",
+                              "fruit",
+                              "grain",
+                              "legume",
+                              "nut_seed",
+                              "meat",
+                              "poultry",
+                              "fish_seafood",
+                              "dairy",
+                              "egg",
+                              "fat_oil",
+                              "fungi",
+                              "herb_spice",
+                              "sweet_confectionery",
+                              "beverage",
+                              "condiment_sauce",
+                              "prepared_composite",
+                              "other"
+                            ],
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "suggested_form": {
+                        "anyOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "enum": [
+                              "unknown",
+                              "whole",
+                              "pieces",
+                              "sliced",
+                              "diced",
+                              "chopped",
+                              "grated",
+                              "shredded",
+                              "minced",
+                              "ground",
+                              "mashed",
+                              "puree",
+                              "flakes",
+                              "florets",
+                              "fillet",
+                              "powder",
+                              "flour",
+                              "granules",
+                              "sprinkles",
+                              "paste",
+                              "spread",
+                              "sauce",
+                              "liquid",
+                              "juice",
+                              "syrup",
+                              "concentrate",
+                              "bar",
+                              "loaf",
+                              "patty",
+                              "sausage",
+                              "other"
+                            ],
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "suggested_preparation": {
+                        "anyOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "enum": [
+                              "unknown",
+                              "none",
+                              "raw",
+                              "cooked",
+                              "boiled",
+                              "steamed",
+                              "baked",
+                              "roasted",
+                              "grilled",
+                              "fried",
+                              "deep_fried",
+                              "sauteed",
+                              "smoked",
+                              "dried",
+                              "dehydrated",
+                              "fermented",
+                              "pickled",
+                              "canned",
+                              "frozen",
+                              "pasteurized",
+                              "uht",
+                              "reconstituted",
+                              "cured"
+                            ],
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "taxonomy_version": {
+                        "const": "food-classification-v1"
+                      }
+                    },
+                    "required": [
+                      "request_hash",
+                      "canonical_food_id",
+                      "status",
+                      "request_family",
+                      "suggested_family",
+                      "confidence",
+                      "reason",
+                      "notes",
+                      "taxonomy_version",
+                      "request_preparation",
+                      "suggested_preparation",
+                      "request_form",
+                      "suggested_form"
+                    ],
+                    "type": "object"
+                  }
+                ]
+              }
+            ]
+          },
           "result": {
             "properties": {
               "status": {
@@ -266,6 +792,315 @@
       },
       "then": {
         "properties": {
+          "identity_review": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "canonical_food_id": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                        "type": "string"
+                      },
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "notes": {
+                        "maxLength": 300,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "reason": {
+                        "enum": [
+                          "consistent",
+                          "family_mismatch",
+                          "family_unconfirmed",
+                          "identity_ambiguous"
+                        ],
+                        "type": "string"
+                      },
+                      "request_family": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                        "type": "string"
+                      },
+                      "request_hash": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-f0-9]{64}$",
+                        "type": "string"
+                      },
+                      "status": {
+                        "enum": [
+                          "confirmed",
+                          "suspect",
+                          "uncertain"
+                        ],
+                        "type": "string"
+                      },
+                      "suggested_family": {
+                        "anyOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "enum": [
+                              "unknown",
+                              "almond",
+                              "animal_food",
+                              "apple",
+                              "banana",
+                              "beef",
+                              "broccoli",
+                              "butter",
+                              "carrot",
+                              "chicken",
+                              "chickpea",
+                              "cod",
+                              "dairy",
+                              "egg",
+                              "fish",
+                              "fruit",
+                              "grain",
+                              "ham",
+                              "legume",
+                              "lentil",
+                              "meat",
+                              "milk",
+                              "nuts_seeds",
+                              "plant_food",
+                              "pork",
+                              "potato",
+                              "potato_starchy_vegetable",
+                              "poultry",
+                              "salmon",
+                              "sauerkraut",
+                              "semi_hard_cheese",
+                              "spinach",
+                              "vegetable",
+                              "white_bread",
+                              "wholegrain_bread",
+                              "yogurt"
+                            ],
+                            "type": "string"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "request_hash",
+                      "canonical_food_id",
+                      "status",
+                      "request_family",
+                      "suggested_family",
+                      "confidence",
+                      "reason",
+                      "notes"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "canonical_food_id": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                        "type": "string"
+                      },
+                      "confidence": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "notes": {
+                        "maxLength": 300,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "reason": {
+                        "enum": [
+                          "consistent",
+                          "family_mismatch",
+                          "family_unconfirmed",
+                          "identity_ambiguous",
+                          "classification_mismatch",
+                          "classification_unconfirmed"
+                        ],
+                        "type": "string"
+                      },
+                      "request_family": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "request_form": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "request_hash": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-f0-9]{64}$",
+                        "type": "string"
+                      },
+                      "request_preparation": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "status": {
+                        "enum": [
+                          "confirmed",
+                          "suspect",
+                          "uncertain"
+                        ],
+                        "type": "string"
+                      },
+                      "suggested_family": {
+                        "anyOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "enum": [
+                              "unknown",
+                              "vegetable",
+                              "fruit",
+                              "grain",
+                              "legume",
+                              "nut_seed",
+                              "meat",
+                              "poultry",
+                              "fish_seafood",
+                              "dairy",
+                              "egg",
+                              "fat_oil",
+                              "fungi",
+                              "herb_spice",
+                              "sweet_confectionery",
+                              "beverage",
+                              "condiment_sauce",
+                              "prepared_composite",
+                              "other"
+                            ],
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "suggested_form": {
+                        "anyOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "enum": [
+                              "unknown",
+                              "whole",
+                              "pieces",
+                              "sliced",
+                              "diced",
+                              "chopped",
+                              "grated",
+                              "shredded",
+                              "minced",
+                              "ground",
+                              "mashed",
+                              "puree",
+                              "flakes",
+                              "florets",
+                              "fillet",
+                              "powder",
+                              "flour",
+                              "granules",
+                              "sprinkles",
+                              "paste",
+                              "spread",
+                              "sauce",
+                              "liquid",
+                              "juice",
+                              "syrup",
+                              "concentrate",
+                              "bar",
+                              "loaf",
+                              "patty",
+                              "sausage",
+                              "other"
+                            ],
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "suggested_preparation": {
+                        "anyOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "enum": [
+                              "unknown",
+                              "none",
+                              "raw",
+                              "cooked",
+                              "boiled",
+                              "steamed",
+                              "baked",
+                              "roasted",
+                              "grilled",
+                              "fried",
+                              "deep_fried",
+                              "sauteed",
+                              "smoked",
+                              "dried",
+                              "dehydrated",
+                              "fermented",
+                              "pickled",
+                              "canned",
+                              "frozen",
+                              "pasteurized",
+                              "uht",
+                              "reconstituted",
+                              "cured"
+                            ],
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "taxonomy_version": {
+                        "const": "food-classification-v1"
+                      }
+                    },
+                    "required": [
+                      "request_hash",
+                      "canonical_food_id",
+                      "status",
+                      "request_family",
+                      "suggested_family",
+                      "confidence",
+                      "reason",
+                      "notes",
+                      "taxonomy_version",
+                      "request_preparation",
+                      "suggested_preparation",
+                      "request_form",
+                      "suggested_form"
+                    ],
+                    "type": "object"
+                  }
+                ]
+              }
+            ]
+          },
           "result": {
             "properties": {
               "status": {
@@ -356,6 +1191,315 @@
     }
   ],
   "properties": {
+    "identity_review": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "canonical_food_id": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                  "type": "string"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "notes": {
+                  "maxLength": 300,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "reason": {
+                  "enum": [
+                    "consistent",
+                    "family_mismatch",
+                    "family_unconfirmed",
+                    "identity_ambiguous"
+                  ],
+                  "type": "string"
+                },
+                "request_family": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                  "type": "string"
+                },
+                "request_hash": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-f0-9]{64}$",
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "confirmed",
+                    "suspect",
+                    "uncertain"
+                  ],
+                  "type": "string"
+                },
+                "suggested_family": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "enum": [
+                        "unknown",
+                        "almond",
+                        "animal_food",
+                        "apple",
+                        "banana",
+                        "beef",
+                        "broccoli",
+                        "butter",
+                        "carrot",
+                        "chicken",
+                        "chickpea",
+                        "cod",
+                        "dairy",
+                        "egg",
+                        "fish",
+                        "fruit",
+                        "grain",
+                        "ham",
+                        "legume",
+                        "lentil",
+                        "meat",
+                        "milk",
+                        "nuts_seeds",
+                        "plant_food",
+                        "pork",
+                        "potato",
+                        "potato_starchy_vegetable",
+                        "poultry",
+                        "salmon",
+                        "sauerkraut",
+                        "semi_hard_cheese",
+                        "spinach",
+                        "vegetable",
+                        "white_bread",
+                        "wholegrain_bread",
+                        "yogurt"
+                      ],
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "request_hash",
+                "canonical_food_id",
+                "status",
+                "request_family",
+                "suggested_family",
+                "confidence",
+                "reason",
+                "notes"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "canonical_food_id": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+                  "type": "string"
+                },
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "notes": {
+                  "maxLength": 300,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "reason": {
+                  "enum": [
+                    "consistent",
+                    "family_mismatch",
+                    "family_unconfirmed",
+                    "identity_ambiguous",
+                    "classification_mismatch",
+                    "classification_unconfirmed"
+                  ],
+                  "type": "string"
+                },
+                "request_family": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "request_form": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "request_hash": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-f0-9]{64}$",
+                  "type": "string"
+                },
+                "request_preparation": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "confirmed",
+                    "suspect",
+                    "uncertain"
+                  ],
+                  "type": "string"
+                },
+                "suggested_family": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "enum": [
+                        "unknown",
+                        "vegetable",
+                        "fruit",
+                        "grain",
+                        "legume",
+                        "nut_seed",
+                        "meat",
+                        "poultry",
+                        "fish_seafood",
+                        "dairy",
+                        "egg",
+                        "fat_oil",
+                        "fungi",
+                        "herb_spice",
+                        "sweet_confectionery",
+                        "beverage",
+                        "condiment_sauce",
+                        "prepared_composite",
+                        "other"
+                      ],
+                      "type": "string"
+                    }
+                  ]
+                },
+                "suggested_form": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "enum": [
+                        "unknown",
+                        "whole",
+                        "pieces",
+                        "sliced",
+                        "diced",
+                        "chopped",
+                        "grated",
+                        "shredded",
+                        "minced",
+                        "ground",
+                        "mashed",
+                        "puree",
+                        "flakes",
+                        "florets",
+                        "fillet",
+                        "powder",
+                        "flour",
+                        "granules",
+                        "sprinkles",
+                        "paste",
+                        "spread",
+                        "sauce",
+                        "liquid",
+                        "juice",
+                        "syrup",
+                        "concentrate",
+                        "bar",
+                        "loaf",
+                        "patty",
+                        "sausage",
+                        "other"
+                      ],
+                      "type": "string"
+                    }
+                  ]
+                },
+                "suggested_preparation": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "enum": [
+                        "unknown",
+                        "none",
+                        "raw",
+                        "cooked",
+                        "boiled",
+                        "steamed",
+                        "baked",
+                        "roasted",
+                        "grilled",
+                        "fried",
+                        "deep_fried",
+                        "sauteed",
+                        "smoked",
+                        "dried",
+                        "dehydrated",
+                        "fermented",
+                        "pickled",
+                        "canned",
+                        "frozen",
+                        "pasteurized",
+                        "uht",
+                        "reconstituted",
+                        "cured"
+                      ],
+                      "type": "string"
+                    }
+                  ]
+                },
+                "taxonomy_version": {
+                  "const": "food-classification-v1"
+                }
+              },
+              "required": [
+                "request_hash",
+                "canonical_food_id",
+                "status",
+                "request_family",
+                "suggested_family",
+                "confidence",
+                "reason",
+                "notes",
+                "taxonomy_version",
+                "request_preparation",
+                "suggested_preparation",
+                "request_form",
+                "suggested_form"
+              ],
+              "type": "object"
+            }
+          ]
+        }
+      ]
+    },
     "request": {
       "anyOf": [
         {
@@ -366,6 +1510,9 @@
         },
         {
           "$ref": "request.schema.json"
+        },
+        {
+          "$ref": "request-classification-v1.schema.json"
         }
       ]
     },

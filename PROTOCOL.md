@@ -180,6 +180,41 @@ adds missing contracts. Frozen V1/V2 schemas, versioned request schema, queue
 history and results are not rewritten. Deploy readers/library and updated worker
 policy before allowing new-policy jobs to be processed. The DB is runtime truth.
 
+## Canonical classification contract v1
+
+The canonical source is Life Hub's `apps/nutrition/food_classification.py`.
+Read `schemas/food-classification-v1.json` and all schema references before
+claiming. Requests with `taxonomy_version: "food-classification-v1"` use
+`schemas/v3/request-classification-v1.schema.json`. This adds three controlled
+fields to the existing V3/JCS protocol, without changing V2 nutrient evidence.
+Old requests without taxonomy_version remain historical, immutable snapshots.
+Unknown taxonomy versions or enum values must be rejected, never normalized.
+
+Family is the broad food category; canonical_name identifies the concrete food.
+Preparation is processing/state; form is physical/product shape. Labels are for
+display, slugs for transport. Use only the versioned schema's enum values.
+`unknown` means insufficient knowledge; `other` means a known food outside the
+categories. Preparation `none` means no relevant processing is specified.
+
+Perform a brief advisory identity check using the same exact-food evidence as
+nutrition research, without additional web research. New identity_review objects
+use `schemas/v3/identity-review-classification-v1.schema.json` and include:
+taxonomy_version, request_hash, canonical_food_id, status, request_family,
+suggested_family, request_preparation, suggested_preparation, request_form,
+suggested_form, confidence, reason, notes. Copy all request_* fields exactly from
+the immutable request (including historical values); suggestions are null or
+members of the corresponding canonical enum. `confirmed`, `suspect`, `uncertain`
+apply to all three fields. Use classification_mismatch/classification_unconfirmed
+for preparation/form discrepancies, or the existing family/identity reason codes.
+Never downgrade new feedback to the historical family-only schema. The legacy
+review variant in job.schema.json exists only to read old terminal envelopes.
+Feedback is advisory, not permission to change canonical definitions, request
+hashes, terminal jobs or nutrition results. Classification corrections alone do
+not trigger research. A new nutrition revision requires evidence that research
+used the wrong food identity, with a local operator audit.
+
+Do not add ad-hoc family/preparation/form values in prompts, frontend code, plugin instructions or worker code. Extend the canonical taxonomy instead.
+
 ## Hourly batch
 
 Maximum 10 confirmed claims per hourly run, sequentially, with an approximately
